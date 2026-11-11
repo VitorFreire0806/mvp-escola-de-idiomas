@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meridiano — Escola de Línguas no Porto · Inglês, Espanhol, Francês, Alemão e mais</title>
+<meta name="description" content="Escola de línguas no Porto: 12 línguas, turmas pequenas, professores nativos e preparação para exames oficiais. Aula experimental e teste de nível gratuitos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#10233f;
+    --navy-2:#183256;
+    --navy-3:#0a172b;
+    --amber:#f0b24a;
+    --amber-light:#f7cd7f;
+    --ivory:#f7f5f0;
+    --ivory-2:#eeeae1;
+    --ink:#0f1c2e;
+    --text:#2f3a4a;
+    --muted:#6b7585;
+    --line:#e3ded3;
+    --line-dark:rgba(255,255,255,.14);
+    --brass-light:#f7cd7f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,"Helvetica Neue",Arial,sans-serif;font-size:16px;background:var(--ivory);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+  img{display:block;width:100%;height:100%;object-fit:cover;color:transparent}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3,h4{font-family:"Plus Jakarta Sans",Inter,sans-serif;font-weight:700;color:var(--ink);line-height:1.12;letter-spacing:-.02em}
+  em{font-style:normal}
+  .container{width:min(1480px,90%);margin-inline:auto}
+  section{padding:130px 0}
+  .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:.76rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#b9801d;margin-bottom:22px}
+  .eyebrow::before{content:"";width:30px;height:2px;background:var(--amber)}
+  .section-head{max-width:820px;margin-bottom:64px}
+  .section-head.center{text-align:center;margin:0 auto 64px}
+  .section-head.center .eyebrow::after{content:"";width:30px;height:2px;background:var(--amber)}
+  .section-head h2{font-size:clamp(2.3rem,4vw,3.7rem)}
+  .section-head h2 em{color:#c98b1f}
+  .section-head p{color:var(--muted);margin-top:20px;font-size:1.08rem;font-weight:300}
+  .dark{background:var(--navy);color:#c9d3e2}
+  .dark h2,.dark h3{color:#fff}
+  .dark .eyebrow{color:var(--amber-light)}
+  .dark .section-head h2 em{color:var(--amber-light)}
+  .dark .section-head p{color:#a9b6ca}
+  .ph{background:var(--ivory-2);overflow:hidden;position:relative}
+  .dark .ph{background:var(--navy-2)}
+  .ph img{transition:transform 1.2s cubic-bezier(.2,.6,.2,1)}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:17px 30px;font-family:inherit;font-size:.92rem;font-weight:600;border:2px solid transparent;border-radius:999px;cursor:pointer;transition:background .3s,color .3s,border-color .3s,transform .3s}
+  .btn::after{content:"→";transition:transform .3s}
+  .btn:hover::after{transform:translateX(4px)}
+  .btn-amber{background:var(--amber);color:var(--navy-3);border-color:var(--amber)}
+  .btn-amber:hover{background:var(--amber-light);border-color:var(--amber-light)}
+  .btn-line{background:transparent;color:#fff;border-color:rgba(255,255,255,.45)}
+  .btn-line:hover{border-color:#fff}
+  .btn-navy{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .btn-navy:hover{background:var(--navy-2)}
+  .btn-outline{background:transparent;color:var(--navy);border-color:var(--navy)}
+  .btn-outline:hover{background:var(--navy);color:#fff}
+  .btn-wa{background:#25d366;color:#fff;border-color:#25d366}
+  .btn-wa::after{content:none}
+
+  /* CABEÇALHO */
+  header{position:fixed;inset:0 0 auto 0;z-index:50;color:#fff;border-bottom:1px solid transparent;transition:background .5s,border-color .5s}
+  header.scrolled{background:rgba(16,35,63,.97);border-bottom-color:var(--line-dark)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:92px;gap:28px}
+  .logo{display:flex;align-items:center;gap:14px;white-space:nowrap}
+  .logo .mark{width:46px;height:46px;flex:none}
+  .logo .mark svg{width:100%;height:100%}
+  .logo strong{display:block;font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:1.5rem;line-height:1;letter-spacing:-.02em}
+  .logo small{display:block;font-size:.66rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#a9b6ca;margin-top:6px}
+  .nav ul{display:flex;gap:34px;list-style:none;font-size:.94rem}
+  .nav ul a{white-space:nowrap;color:#dfe6f0;position:relative;padding:6px 0}
+  .nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--amber);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+  .nav ul a:hover{color:#fff}
+  .nav ul a:hover::after{transform:scaleX(1)}
+  .nav-right{display:flex;align-items:center;gap:16px}
+  .nav-right .btn{padding:12px 22px}
+  .nav-right .btn::after{content:none}
+  .menu-toggle{display:none;background:none;border:0;font-size:1.7rem;cursor:pointer;color:#fff}
+
+
+  /* IDIOMAS */
+  .lang{position:relative}
+  .lang-btn{display:flex;align-items:center;gap:8px;padding:10px 14px;border:1px solid rgba(245,239,230,.35);background:transparent;color:#fff;font:inherit;font-size:.74rem;letter-spacing:.16em;cursor:pointer;transition:.3s}
+  .lang-btn:hover{border-color:var(--brass-light)}
+  .flag{width:22px;height:16px;object-fit:cover;box-shadow:0 0 0 1px rgba(0,0,0,.15);flex:none}
+  .caret{font-size:.6rem;opacity:.7}
+  .nav ul.lang-menu{display:block;gap:0;font-size:.92rem;letter-spacing:0;text-transform:none}
+  .lang-menu{position:absolute;right:0;top:calc(100% + 12px);background:#fff;box-shadow:0 18px 44px rgba(0,0,0,.28);list-style:none;padding:8px;min-width:210px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:.25s;z-index:70}
+  .lang.open .lang-menu{opacity:1;visibility:visible;transform:none}
+  .lang-menu button{display:flex;align-items:center;gap:12px;width:100%;padding:10px 12px;border:0;background:none;font:inherit;color:var(--ink);cursor:pointer;text-align:left}
+  .lang-menu button:hover{background:var(--ivory)}
+  .lang-menu button.active{background:var(--ivory-2);font-weight:600}
+
+  /* HERO */
+  .hero{background:var(--navy);color:#fff;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:180px 0 0;position:relative;overflow:hidden;isolation:isolate}
+  .slides{position:absolute;inset:0;z-index:-2;background:var(--navy-3)}
+  .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.8s ease}
+  .slide.on{opacity:1}
+  .slide img{transform:scale(1.14);transition:transform 8s ease-out}
+  .slide.on img{transform:scale(1)}
+  .hero-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(10,23,43,.94) 0%,rgba(10,23,43,.78) 42%,rgba(10,23,43,.32) 100%),linear-gradient(0deg,rgba(10,23,43,.93) 0%,rgba(10,23,43,0) 45%),linear-gradient(180deg,rgba(10,23,43,.65) 0%,rgba(10,23,43,0) 25%)}
+  .hero .eyebrow{color:var(--amber-light)}
+  .hero h1{font-size:clamp(3rem,6.6vw,6.4rem);font-weight:800;color:#fff;line-height:1.02;letter-spacing:-.035em;margin-bottom:30px;max-width:1000px;text-shadow:0 2px 30px rgba(0,0,0,.25)}
+  .hero h1 em{display:block;color:var(--amber)}
+  .hero p{font-size:1.18rem;font-weight:300;color:#dbe3ee;max-width:600px;margin-bottom:44px}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+  .hello{position:absolute;right:5%;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:flex-end;gap:6px;font-family:"Plus Jakarta Sans",sans-serif;font-weight:700;font-size:clamp(1.2rem,1.7vw,1.7rem);color:rgba(255,255,255,.2);pointer-events:none}
+  .hello span{animation:glow 10s ease-in-out infinite;animation-delay:calc(var(--i) * 1s + var(--d))}
+  @keyframes glow{0%,12%,100%{color:rgba(255,255,255,.2)}5%{color:var(--amber-light)}}
+  .hero-facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:96px;border-top:1px solid var(--line-dark)}
+  .hero-facts div{padding:32px 0 42px}
+  .hero-facts div+div{padding-left:40px;border-left:1px solid var(--line-dark)}
+  .hero-facts strong{display:block;font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:2.8rem;color:#fff;line-height:1.1;margin-bottom:6px;letter-spacing:-.02em}
+  .hero-facts span{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:#a9b6ca}
+  .hero-facts strong span{font:inherit;letter-spacing:inherit;text-transform:none;color:inherit}
+
+  /* ABERTURA — "olá" em dez línguas, globo e cortina */
+  .intro{position:fixed;inset:0;z-index:200;pointer-events:none}
+  .curtain{position:absolute;inset:0;background:var(--navy-3);animation:lift 1.1s cubic-bezier(.77,0,.18,1) 3s forwards}
+  .curtain::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:100%;background:var(--amber);transform-origin:left;transform:scaleX(0);animation:bar 2.6s cubic-bezier(.4,0,.2,1) .2s forwards}
+  @keyframes lift{to{transform:translateY(-100%)}}
+  @keyframes bar{to{transform:scaleX(1)}}
+  .words{position:absolute;inset:0;display:grid;place-items:center}
+  .words span{grid-area:1/1;font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:clamp(3.2rem,9vw,8rem);letter-spacing:-.03em;color:#fff;opacity:0;animation:word .26s ease calc(var(--i) * .17s + .25s) both}
+  .words span:nth-child(odd){color:var(--amber)}
+  @keyframes word{0%{opacity:0;transform:translateY(30px)}30%,70%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-30px)}}
+  .globe{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;animation:fadeOut .45s ease 2.8s forwards}
+  .globe svg{width:120px;height:120px}
+  .globe svg *{fill:none;stroke:var(--amber);stroke-width:2;stroke-dasharray:400;stroke-dashoffset:400;animation:draw 1s cubic-bezier(.65,0,.35,1) 1.95s forwards}
+  .globe .name{font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:2.6rem;letter-spacing:-.02em;color:#fff;opacity:0;animation:fadeIn .7s ease 2.15s forwards}
+  .globe .sub{font-size:.76rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--amber-light);opacity:0;animation:fadeIn .7s ease 2.3s forwards}
+  @keyframes draw{to{stroke-dashoffset:0}}
+  @keyframes fadeOut{to{opacity:0}}
+  :root{--d:3.3s}
+  .no-intro{--d:.1s}
+  .no-intro .intro{display:none}
+  header{animation:fadeDown 1s ease var(--d) both}
+  .hero .eyebrow{animation:rise .9s ease calc(var(--d) + .15s) both}
+  .hero h1{animation:reveal 1.3s cubic-bezier(.2,.7,.2,1) calc(var(--d) + .3s) both}
+  .hero p{animation:rise 1s ease calc(var(--d) + .75s) both}
+  .hero-actions{animation:rise 1s ease calc(var(--d) + .95s) both}
+  .hero-facts{animation:rise 1s ease calc(var(--d) + 1.2s) both}
+  .hello{animation:fadeIn 1.5s ease calc(var(--d) + 1s) both}
+  @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+  @keyframes reveal{from{opacity:0;clip-path:inset(0 0 100% 0);transform:translateY(40px)}to{opacity:1;clip-path:inset(0 0 -12% 0);transform:none}}
+  @keyframes fadeDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:none}}
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+  /* LÍNGUAS */
+  .lang-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .lcard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 30px 28px;position:relative;overflow:hidden;transition:transform .35s,box-shadow .35s,border-color .35s}
+  .lcard:hover{transform:translateY(-6px);box-shadow:0 22px 48px rgba(16,35,63,.12);border-color:transparent}
+  .lcard .fl{width:44px;height:31px;border-radius:5px;object-fit:cover;box-shadow:0 0 0 1px rgba(0,0,0,.08);margin-bottom:22px}
+  .lcard .hi{position:absolute;right:24px;top:24px;font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:1.5rem;color:#ece6da;transition:color .35s}
+  .lcard:hover .hi{color:var(--amber)}
+  .lcard h3{font-size:1.32rem;margin-bottom:4px}
+  .lcard p{color:var(--muted);font-size:.9rem}
+
+  /* CURSOS */
+  .courses{background:var(--ivory-2)}
+  .c-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .course{position:relative;height:clamp(400px,30vw,480px);overflow:hidden;border-radius:20px}
+  .course .ph{position:absolute;inset:0}
+  .course::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,23,43,.92) 0%,rgba(10,23,43,.1) 62%)}
+  .course:hover img{transform:scale(1.06)}
+  .course-body{position:absolute;left:0;right:0;bottom:0;padding:34px;z-index:2}
+  .course .tag{display:inline-block;background:var(--amber);color:var(--navy-3);font-size:.72rem;font-weight:700;letter-spacing:.08em;padding:5px 12px;border-radius:999px;margin-bottom:14px}
+  .course h3{font-size:1.75rem;color:#fff;margin-bottom:8px}
+  .course p{color:#dbe3ee;font-weight:300;font-size:.97rem;max-width:400px}
+
+  /* MÉTODO */
+  .method-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center}
+  .method-imgs{display:grid;grid-template-columns:1.2fr 1fr;gap:18px;height:clamp(480px,40vw,640px)}
+  .method-imgs .ph{border-radius:20px}
+  .method-imgs .ph:last-child{margin-top:80px}
+  .method h2{font-size:clamp(2.3rem,3.8vw,3.5rem);margin-bottom:22px}
+  .method h2 em{color:#c98b1f}
+  .method-grid > div > p{font-weight:300;font-size:1.08rem;margin-bottom:40px}
+  .points{display:grid;grid-template-columns:1fr 1fr;gap:34px 40px;margin-bottom:44px}
+  .point .ic{width:52px;height:52px;border-radius:14px;background:var(--navy);color:var(--amber);display:grid;place-items:center;font-size:1.3rem;margin-bottom:16px}
+  .point h3{font-size:1.2rem;margin-bottom:6px}
+  .point p{color:var(--muted);font-weight:300;font-size:.96rem}
+
+  /* NÍVEIS */
+  .levels{display:grid;grid-template-columns:repeat(6,1fr);position:relative}
+  .levels::before{content:"";position:absolute;left:0;right:0;top:38px;height:2px;background:linear-gradient(90deg,var(--amber),rgba(240,178,74,.15))}
+  .lv{padding-right:26px;position:relative}
+  .lv .code{width:76px;height:76px;border-radius:50%;background:var(--navy);border:2px solid var(--amber);display:grid;place-items:center;font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:1.5rem;color:var(--amber-light);margin-bottom:26px;position:relative;transition:background .3s,color .3s}
+  .lv:hover .code{background:var(--amber);color:var(--navy-3)}
+  .lv h3{font-size:1.2rem;margin-bottom:8px}
+  .lv p{color:#a9b6ca;font-weight:300;font-size:.95rem}
+
+  /* PREÇOS */
+  .plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1300px;margin:0 auto}
+  .plan{background:#fff;border:1px solid var(--line);border-radius:22px;padding:46px 40px;display:flex;flex-direction:column;position:relative}
+  .plan.featured{background:var(--navy);border-color:var(--navy);color:#c9d3e2;box-shadow:0 30px 60px rgba(16,35,63,.25)}
+  .plan.featured h3{color:#fff}
+  .plan .badge{position:absolute;top:-14px;left:40px;background:var(--amber);color:var(--navy-3);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:999px;white-space:nowrap}
+  .plan h3{font-size:1.7rem}
+  .plan .for{color:var(--muted);font-weight:300;margin-top:6px}
+  .plan.featured .for{color:#a9b6ca}
+  .plan .price{font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:3.4rem;color:var(--ink);line-height:1;margin:30px 0 4px;letter-spacing:-.03em}
+  .plan.featured .price{color:#fff}
+  .plan .pp{font-size:.76rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#c98b1f}
+  .plan.featured .pp{color:var(--amber-light)}
+  .plan ul{list-style:none;margin:28px 0 34px;flex:1;border-top:1px solid var(--line)}
+  .plan.featured ul{border-color:var(--line-dark)}
+  .plan li{padding:12px 0;border-bottom:1px solid var(--line);font-weight:300;display:flex;gap:12px}
+  .plan.featured li{border-color:var(--line-dark)}
+  .plan li::before{content:"✓";color:#c98b1f;font-weight:700}
+  .plan.featured li::before{color:var(--amber)}
+  .plan .btn{width:100%}
+  .plans-note{text-align:center;color:var(--muted);font-weight:300;margin-top:34px;font-size:.94rem}
+
+  /* EXAMES */
+  .exams{background:var(--ivory-2);padding:70px 0}
+  .exams-in{display:flex;align-items:center;gap:60px;flex-wrap:wrap;justify-content:space-between}
+  .exams h3{font-size:1.25rem;max-width:280px}
+  .exam-list{display:flex;flex-wrap:wrap;gap:12px 36px;font-family:"Plus Jakarta Sans",sans-serif;font-weight:800;font-size:1.4rem;color:#9aa3b2;letter-spacing:-.01em}
+
+  /* OPINIÕES */
+  .r-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .review{background:#fff;border:1px solid var(--line);border-radius:20px;padding:40px 36px}
+  .review .stars{color:var(--amber);letter-spacing:4px;margin-bottom:18px}
+  .review p{font-size:1.12rem;line-height:1.65;color:var(--ink);margin-bottom:26px}
+  .review .who{display:flex;align-items:center;gap:14px}
+  .review .av{width:52px;height:52px;border-radius:50%;flex:none}
+  .review strong{display:block;font-weight:600;color:var(--ink)}
+  .review small{color:var(--muted)}
+
+  /* FAQ */
+  .faqs{background:var(--ivory-2)}
+  .faq{max-width:940px;margin:0 auto}
+  .faq details{background:#fff;border-radius:16px;padding:26px 30px;margin-bottom:14px;border:1px solid var(--line)}
+  .faq summary{font-family:"Plus Jakarta Sans",sans-serif;font-weight:700;font-size:1.15rem;color:var(--ink);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";font-weight:400;color:#c98b1f;font-size:1.6rem;line-height:1}
+  .faq details[open] summary::after{content:"−"}
+  .faq details p{color:var(--muted);font-weight:300;margin-top:12px}
+
+  /* CONTACTO */
+  .contact-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:100px;align-items:start}
+  .contact h2{font-size:clamp(2.3rem,3.8vw,3.5rem);margin-bottom:22px}
+  .contact-grid > div > p{color:#a9b6ca;font-weight:300;font-size:1.08rem;margin-bottom:44px}
+  .c-line{padding:20px 0;border-top:1px solid var(--line-dark)}
+  .c-line strong{display:block;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--amber-light);font-weight:600;margin-bottom:4px}
+  .c-line span{color:#fff;font-weight:300}
+  .form{background:#fff;color:var(--text);padding:clamp(34px,4.5vw,60px);border-radius:24px}
+  .dark .form h3{color:var(--ink)}
+  .form h3{font-size:1.9rem;margin-bottom:30px}
+  .fields{display:grid;grid-template-columns:1fr 1fr;gap:22px 24px}
+  .field{display:flex;flex-direction:column;gap:8px}
+  .field.full{grid-column:span 2}
+  .field label{font-size:.74rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .field input,.field select,.field textarea{border:1px solid var(--line);border-radius:12px;padding:13px 14px;font:inherit;color:var(--ink);background:var(--ivory);outline:none;transition:border-color .3s,background .3s}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--navy);background:#fff}
+  .field textarea{min-height:96px;resize:vertical}
+  .form .btn{width:100%;margin-top:28px;padding:19px}
+  .form-note{text-align:center;color:var(--muted);font-weight:300;font-size:.86rem;margin-top:14px}
+
+  .map{height:400px;filter:grayscale(.8) contrast(1.02)}
+  .map iframe{width:100%;height:100%;border:0}
+
+  footer{background:var(--navy-3);color:#8d9bb1;padding:86px 0 34px}
+  .foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px;margin-bottom:64px}
+  footer .logo{color:#fff}
+  footer p{margin-top:24px;max-width:440px;font-weight:300}
+  footer h4{color:#fff;font-size:1.1rem;margin-bottom:16px}
+  footer li{list-style:none;margin-bottom:10px;font-weight:300}
+  footer a:hover{color:#fff}
+  .legal{border-top:1px solid rgba(255,255,255,.08);padding-top:26px;text-align:center;font-size:.8rem;font-weight:300}
+
+  .wa-float{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;font-size:1.6rem;box-shadow:0 10px 24px rgba(37,211,102,.4);z-index:60;transition:transform .2s;animation:fadeIn 1s ease calc(var(--d) + 1.8s) both}
+  .wa-float:hover{transform:scale(1.08)}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity 1s ease,transform 1s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (prefers-reduced-motion:reduce){
+    .intro{display:none}
+    *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important}
+    .reveal{opacity:1;transform:none}
+  }
+  @media (max-width:1280px){
+    .nav ul{gap:24px;font-size:.9rem}
+    .logo small{display:none}
+    .hello{display:none}
+    .lang-grid{grid-template-columns:repeat(3,1fr)}
+  }
+  @media (max-width:1100px){
+    .c-grid{grid-template-columns:repeat(2,1fr)}
+    .levels{grid-template-columns:repeat(3,1fr);row-gap:50px}
+    .method-grid,.contact-grid{gap:70px}
+  }
+  @media (max-width:1000px){
+    .method-grid,.contact-grid{grid-template-columns:1fr}
+    .plan-grid,.r-grid{grid-template-columns:1fr;max-width:620px}
+    .r-grid{margin:0 auto}
+    .foot{grid-template-columns:1fr}
+  }
+  @media (max-width:960px){
+    .nav ul{display:none}
+    .nav ul.open{display:flex;flex-direction:column;position:absolute;top:92px;left:0;right:0;background:var(--navy);padding:28px 5%;gap:22px;border-bottom:1px solid var(--line-dark)}
+    .menu-toggle{display:block}
+    .nav-right .btn{display:none}
+    section{padding:90px 0}
+    .hero{padding-top:150px}
+  }
+  @media (max-width:700px){
+    .lang-grid{grid-template-columns:repeat(2,1fr);gap:14px}
+    .lcard{padding:22px 20px}
+    .lcard .hi{display:none}
+    .levels{grid-template-columns:repeat(2,1fr)}
+    .levels::before{display:none}
+  }
+  @media (max-width:600px){
+    .c-grid,.points,.fields{grid-template-columns:1fr}
+    .field.full{grid-column:span 1}
+    .hero-facts strong{font-size:1.9rem}
+    .hero-facts div+div{padding-left:18px}
+    .method-imgs{height:380px}
+    .logo strong{font-size:1.25rem}
+  }
+</style>
+</head>
+<body>
+<script>try{if(sessionStorage.getItem("mrIntro")||matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("no-intro");sessionStorage.setItem("mrIntro","1")}catch(e){}</script>
+<div class="intro" aria-hidden="true">
+  <div class="curtain">
+    <div class="words">
+      <span style="--i:0">Olá</span><span style="--i:1">Hello</span><span style="--i:2">Hola</span><span style="--i:3">Bonjour</span><span style="--i:4">Ciao</span>
+      <span style="--i:5">Hallo</span><span style="--i:6">Привіт</span><span style="--i:7">Привет</span><span style="--i:8">こんにちは</span><span style="--i:9">你好</span>
+    </div>
+    <div class="globe">
+      <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="54"/><ellipse cx="60" cy="60" rx="24" ry="54"/><path d="M6 60h108M14 33h92M14 87h92"/></svg>
+      <div class="name">Meridiano</div>
+      <div class="sub" data-i18n="k0">Escola de Línguas</div>
+    </div>
+  </div>
+</div>
+
+<header id="header">
+  <div class="container nav">
+    <a href="#inicio" class="logo"><span class="mark"><svg viewBox="0 0 46 46" fill="none" stroke="#f0b24a" stroke-width="1.6"><circle cx="23" cy="23" r="20"/><ellipse cx="23" cy="23" rx="9" ry="20"/><path d="M3 23h40M6 13h34M6 33h34"/></svg></span><span><strong>Meridiano</strong><small data-i18n="k0">Escola de Línguas</small></span></a>
+    <ul id="menu">
+      <li><a href="#linguas" data-i18n="k1">Línguas</a></li>
+      <li><a href="#cursos" data-i18n="k2">Cursos</a></li>
+      <li><a href="#metodo" data-i18n="k3">Método</a></li>
+      <li><a href="#precos" data-i18n="k4">Preços</a></li>
+      <li><a href="#contactos" data-i18n="k5">Contactos</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang" id="lang">
+        <button type="button" class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false">
+          <img class="flag" id="langFlag" src="https://flagcdn.com/w40/pt.png" alt="" width="22" height="16"><span id="langCode">PT</span><span class="caret">▾</span>
+        </button>
+        <ul class="lang-menu" id="langMenu">
+          <li><button type="button" data-lang="pt"><img class="flag" src="https://flagcdn.com/w40/pt.png" alt="" width="22" height="16">Português</button></li>
+          <li><button type="button" data-lang="en"><img class="flag" src="https://flagcdn.com/w40/gb.png" alt="" width="22" height="16">English</button></li>
+          <li><button type="button" data-lang="es"><img class="flag" src="https://flagcdn.com/w40/es.png" alt="" width="22" height="16">Español</button></li>
+          <li><button type="button" data-lang="fr"><img class="flag" src="https://flagcdn.com/w40/fr.png" alt="" width="22" height="16">Français</button></li>
+          <li><button type="button" data-lang="it"><img class="flag" src="https://flagcdn.com/w40/it.png" alt="" width="22" height="16">Italiano</button></li>
+          <li><button type="button" data-lang="de"><img class="flag" src="https://flagcdn.com/w40/de.png" alt="" width="22" height="16">Deutsch</button></li>
+          <li><button type="button" data-lang="uk"><img class="flag" src="https://flagcdn.com/w40/ua.png" alt="" width="22" height="16">Українська</button></li>
+          <li><button type="button" data-lang="ru"><img class="flag" src="https://flagcdn.com/w40/ru.png" alt="" width="22" height="16">Русский</button></li>
+          <li><button type="button" data-lang="ja"><img class="flag" src="https://flagcdn.com/w40/jp.png" alt="" width="22" height="16">日本語</button></li>
+          <li><button type="button" data-lang="zh"><img class="flag" src="https://flagcdn.com/w40/cn.png" alt="" width="22" height="16">中文</button></li>
+        </ul>
+      </div>
+
+      <a href="#contactos" class="btn btn-amber" data-i18n="k6">Aula experimental grátis</a>
+      <button class="menu-toggle" aria-label="Abrir menu" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero dark" id="inicio">
+  <div class="slides">
+    <div class="slide on"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=2400&q=80" alt="" fetchpriority="high"></div>
+    <div class="slide"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=2400&q=80" alt=""></div>
+    <div class="slide"><img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=2400&q=80" alt=""></div>
+  </div>
+  <div class="hero-shade"></div>
+  <div class="hello" aria-hidden="true"><span style="--i:0">Hello</span><span style="--i:1">Hola</span><span style="--i:2">Bonjour</span><span style="--i:3">Hallo</span><span style="--i:4">Ciao</span><span style="--i:5">Привіт</span><span style="--i:6">Привет</span><span style="--i:7">こんにちは</span><span style="--i:8">你好</span><span style="--i:9">안녕하세요</span></div>
+  <div class="container">
+    <span class="eyebrow" data-i18n="k7">Escola de línguas · Porto</span>
+    <h1 data-i18n="k8">Fale com o mundo <em>com confiança.</em></h1>
+    <p data-i18n="k9">Inglês, espanhol, francês, alemão e mais oito línguas, em turmas pequenas e com professores nativos. Para adultos, crianças e empresas.</p>
+    <div class="hero-actions">
+      <a href="#contactos" class="btn btn-amber" data-i18n="k6">Aula experimental grátis</a>
+      <a href="#cursos" class="btn btn-line" data-i18n="k10">Ver cursos</a>
+    </div>
+    <div class="hero-facts">
+      <div><strong data-count="12">12</strong><span data-i18n="k1">Línguas</span></div>
+      <div><strong data-count="20">20</strong><span data-i18n="k11">Anos a ensinar</span></div>
+      <div><strong><span data-count="98">98</span>%</strong><span data-i18n="k12">Aprovação em exames oficiais</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- LÍNGUAS -->
+<section id="linguas">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="k1">Línguas</span>
+      <h2 data-i18n="k13">Doze línguas, <em>um só lugar</em></h2>
+      <p data-i18n="k14">Todas ensinadas por professores nativos, do primeiro contacto com a língua até à fluência.</p>
+    </div>
+    <div class="lang-grid">
+      <div class="lcard reveal"><img class="fl" src="https://flagcdn.com/w80/gb.png" alt=""><span class="hi">Hello</span><h3 data-i18n="k15">Inglês</h3><p data-i18n="k16">Níveis A1 a C2</p></div>
+      <div class="lcard reveal"><img class="fl" src="https://flagcdn.com/w80/es.png" alt=""><span class="hi">Hola</span><h3 data-i18n="k17">Espanhol</h3><p data-i18n="k16">Níveis A1 a C2</p></div>
+      <div class="lcard reveal"><img class="fl" src="https://flagcdn.com/w80/fr.png" alt=""><span class="hi">Bonjour</span><h3 data-i18n="k18">Francês</h3><p data-i18n="k16">Níveis A1 a C2</p></div>
+      <div class="lcard reveal"><img class="fl" src="https://flagcdn.com/w80/de.png" alt=""><span class="hi">Hallo</span><h3 data-i18n="k19">Alemão</h3><p data-i18n="k16">Níveis A1 a C2</p></div>
+      <div class="lcard reveal"><img class="fl" src="https://flagcdn.com/w80/it.png" alt=""><span class="hi">Ciao</span><h3 data-i18n="k20">Italiano</h3><p data-i18n="k16">Níveis A1 a C2</p></div>
+      <div class="lcard reveal"><img class="fl" src="https://flagcdn.com/w80/pt.png" alt=""><span class="hi">Olá</span><h3 data-i18n="k21">Português para estrangeiros</h3><p data-i18n="k16">Níveis A1 a C2</p></div>
+      <div class="lcard reveal"><img class="fl" src="https://flagcdn.com/w80/nl.png" alt=""><span class="hi">Hoi</span><h3 data-i18n="k22">Neerlandês</h3><p data-i18n="k23">Níveis A1 a B2</p></div>
+      <div class="lcard reveal"><img class="fl" src="https://flagcdn.com/w80/ru.png" alt=""><span class="hi">Привет</span><h3 data-i18n="k24">Russo</h3><p data-i18n="k23">Níveis A1 a B2</p></div>
+      <div class="lcard reveal"><img class="fl" src="https://flagcdn.com/w80/cn.png" alt=""><span class="hi">你好</span><h3 data-i18n="k25">Chinês</h3><p data-i18n="k23">Níveis A1 a B2</p></div>
+      <div class="lcard reveal"><img class="fl" src="https://flagcdn.com/w80/jp.png" alt=""><span class="hi">こんにちは</span><h3 data-i18n="k26">Japonês</h3><p data-i18n="k23">Níveis A1 a B2</p></div>
+      <div class="lcard reveal"><img class="fl" src="https://flagcdn.com/w80/kr.png" alt=""><span class="hi">안녕</span><h3 data-i18n="k27">Coreano</h3><p data-i18n="k23">Níveis A1 a B2</p></div>
+      <div class="lcard reveal"><img class="fl" src="https://flagcdn.com/w80/sa.png" alt=""><span class="hi">مرحبا</span><h3 data-i18n="k28">Árabe</h3><p data-i18n="k23">Níveis A1 a B2</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CURSOS -->
+<section class="courses" id="cursos">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="k2">Cursos</span>
+      <h2 data-i18n="k29">Um curso para <em>cada objetivo</em></h2>
+      <p data-i18n="k30">Aprenda ao seu ritmo, em grupo ou individualmente, na escola ou a partir de casa.</p>
+    </div>
+    <div class="c-grid">
+      <article class="course reveal"><div class="ph"><img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=900&q=75" alt=""></div><div class="course-body"><span class="tag" data-i18n="k31">Mais procurado</span><h3 data-i18n="k32">Cursos em grupo</h3><p data-i18n="k33">Turmas de 4 a 8 alunos, duas vezes por semana, de manhã, à tarde ou à noite.</p></div></article>
+      <article class="course reveal"><div class="ph"><img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=900&q=75" alt=""></div><div class="course-body"><h3 data-i18n="k34">Aulas individuais</h3><p data-i18n="k35">Um professor só para si, com horários flexíveis e um plano feito à medida.</p></div></article>
+      <article class="course reveal"><div class="ph"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=75" alt=""></div><div class="course-body"><h3 data-i18n="k36">Crianças e jovens</h3><p data-i18n="k37">Aulas dinâmicas a partir dos 4 anos, com jogos, música e projetos.</p></div></article>
+      <article class="course reveal"><div class="ph"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=75" alt=""></div><div class="course-body"><h3 data-i18n="k38">Empresas</h3><p data-i18n="k39">Formação para equipas, nas vossas instalações ou online, com relatórios de progresso.</p></div></article>
+      <article class="course reveal"><div class="ph"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=900&q=75" alt=""></div><div class="course-body"><h3 data-i18n="k40">Preparação para exames</h3><p data-i18n="k41">Cambridge, IELTS, DELE, DELF e Goethe, com simulações de exame e acompanhamento próximo.</p></div></article>
+      <article class="course reveal"><div class="ph"><img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=900&q=75" alt=""></div><div class="course-body"><h3 data-i18n="k42">Aulas online</h3><p data-i18n="k43">A mesma qualidade das aulas presenciais, em direto e com plataforma própria.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- MÉTODO -->
+<section class="method" id="metodo">
+  <div class="container method-grid">
+    <div class="method-imgs reveal">
+      <div class="ph"><img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=900&q=75" alt=""></div>
+      <div class="ph"><img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=700&q=75" alt=""></div>
+    </div>
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="k44">O nosso método</span>
+      <h2 data-i18n="k45">Aprende-se a falar <em>falando.</em></h2>
+      <p data-i18n="k46">Desde a primeira aula, o foco está na conversação. A gramática surge com naturalidade, sempre ligada a situações reais.</p>
+      <div class="points">
+        <div class="point"><div class="ic">👥</div><h3 data-i18n="k47">Turmas pequenas</h3><p data-i18n="k48">No máximo 8 alunos por turma, para que todos falem em todas as aulas.</p></div>
+        <div class="point"><div class="ic">🎓</div><h3 data-i18n="k49">Professores nativos</h3><p data-i18n="k50">Todos certificados e com experiência no ensino a estrangeiros.</p></div>
+        <div class="point"><div class="ic">💻</div><h3 data-i18n="k51">Plataforma online</h3><p data-i18n="k52">Exercícios, áudios e gravações das aulas disponíveis 24 horas por dia.</p></div>
+        <div class="point"><div class="ic">📜</div><h3 data-i18n="k53">Certificado em cada nível</h3><p data-i18n="k54">No fim de cada nível recebe um certificado de frequência e aproveitamento.</p></div>
+      </div>
+      <a href="#contactos" class="btn btn-navy" data-i18n="k55">Fazer teste de nível grátis</a>
+    </div>
+  </div>
+</section>
+
+<!-- NÍVEIS -->
+<section class="dark">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="k56">Níveis</span>
+      <h2 data-i18n="k57">Do primeiro olá <em>à fluência</em></h2>
+      <p data-i18n="k58">Seguimos o Quadro Europeu Comum de Referência para as Línguas. Cada nível tem entre 60 e 90 horas de aulas.</p>
+    </div>
+    <div class="levels">
+      <div class="lv reveal"><div class="code">A1</div><h3 data-i18n="k59">Iniciação</h3><p data-i18n="k60">Apresenta-se e usa expressões do dia a dia.</p></div>
+      <div class="lv reveal"><div class="code">A2</div><h3 data-i18n="k61">Elementar</h3><p data-i18n="k62">Fala sobre a família, o trabalho e as compras.</p></div>
+      <div class="lv reveal"><div class="code">B1</div><h3 data-i18n="k63">Intermédio</h3><p data-i18n="k64">Resolve situações de viagem e conta experiências.</p></div>
+      <div class="lv reveal"><div class="code">B2</div><h3 data-i18n="k65">Intermédio superior</h3><p data-i18n="k66">Conversa com fluência com falantes nativos.</p></div>
+      <div class="lv reveal"><div class="code">C1</div><h3 data-i18n="k67">Avançado</h3><p data-i18n="k68">Usa a língua com eficácia no trabalho e nos estudos.</p></div>
+      <div class="lv reveal"><div class="code">C2</div><h3 data-i18n="k69">Proficiência</h3><p data-i18n="k70">Compreende praticamente tudo e exprime-se com precisão.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PREÇOS -->
+<section id="precos">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" data-i18n="k4">Preços</span>
+      <h2 data-i18n="k71">Preços claros, <em>sem surpresas</em></h2>
+      <p data-i18n="k72">Inscrição gratuita este mês e material didático incluído em todos os cursos.</p>
+    </div>
+    <div class="plan-grid">
+      <div class="plan reveal">
+        <h3 data-i18n="k73">Grupo</h3><p class="for" data-i18n="k74">2 aulas de 90 minutos por semana</p>
+        <div class="price">89 €</div><span class="pp" data-i18n="k75">por mês</span>
+        <ul><li data-i18n="k76">Turmas até 8 alunos</li><li data-i18n="k77">Material didático incluído</li><li data-i18n="k78">Acesso à plataforma online</li><li data-i18n="k79">Certificado de nível</li></ul>
+        <a href="#contactos" class="btn btn-outline" data-i18n="k80">Começar agora</a>
+      </div>
+      <div class="plan featured reveal">
+        <span class="badge" data-i18n="k81">Resultados mais rápidos</span>
+        <h3 data-i18n="k82">Intensivo</h3><p class="for" data-i18n="k83">4 aulas de 90 minutos por semana</p>
+        <div class="price">159 €</div><span class="pp" data-i18n="k75">por mês</span>
+        <ul><li data-i18n="k84">Turmas até 6 alunos</li><li data-i18n="k85">Clube de conversação semanal</li><li data-i18n="k78">Acesso à plataforma online</li><li data-i18n="k86">Um nível em metade do tempo</li></ul>
+        <a href="#contactos" class="btn btn-amber" data-i18n="k80">Começar agora</a>
+      </div>
+      <div class="plan reveal">
+        <h3 data-i18n="k87">Individual</h3><p class="for" data-i18n="k88">Aulas de 60 minutos à sua medida</p>
+        <div class="price">32 €</div><span class="pp" data-i18n="k89">por aula</span>
+        <ul><li data-i18n="k90">Horário totalmente flexível</li><li data-i18n="k91">Presencial ou online</li><li data-i18n="k92">Plano de estudo personalizado</li><li data-i18n="k93">Desconto em pacotes de 10 aulas</li></ul>
+        <a href="#contactos" class="btn btn-outline" data-i18n="k80">Começar agora</a>
+      </div>
+    </div>
+    <p class="plans-note" data-i18n="k94">Descontos para irmãos, estudantes e empresas. Pagamento mensal, sem fidelização.</p>
+  </div>
+</section>
+
+<!-- EXAMES -->
+<section class="exams">
+  <div class="container exams-in reveal">
+    <h3 data-i18n="k95">Preparamos para os exames oficiais</h3>
+    <div class="exam-list"><span>Cambridge</span><span>IELTS</span><span>TOEFL</span><span>DELE</span><span>DELF</span><span>Goethe</span><span>CELI</span><span>HSK</span><span>JLPT</span></div>
+  </div>
+</section>
+
+<!-- OPINIÕES -->
+<section>
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" data-i18n="k96">Opiniões</span>
+      <h2 data-i18n="k97">Alunos que já falam <em>com o mundo</em></h2>
+    </div>
+    <div class="r-grid">
+      <div class="review reveal"><div class="stars">★★★★★</div><p data-i18n="k98">“Em seis meses passei do A2 ao B2 em inglês e consegui o emprego que queria.”</p><div class="who"><div class="ph av"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=70" alt=""></div><div><strong>Ana R.</strong><small data-i18n="k99">Inglês · Curso intensivo</small></div></div></div>
+      <div class="review reveal"><div class="stars">★★★★★</div><p data-i18n="k100">“Cheguei a Portugal sem falar português. Hoje trato de tudo sozinha e já fiz muitos amigos.”</p><div class="who"><div class="ph av"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=70" alt=""></div><div><strong>Olena K.</strong><small data-i18n="k101">Português para estrangeiros · Grupo</small></div></div></div>
+      <div class="review reveal"><div class="stars">★★★★★</div><p data-i18n="k102">“Os nossos filhos adoram as aulas. Aprendem a brincar e já não têm vergonha de falar inglês.”</p><div class="who"><div class="ph av"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=70" alt=""></div><div><strong>Carla e Pedro</strong><small data-i18n="k103">Pais · Crianças e jovens</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faqs">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" data-i18n="k104">Perguntas frequentes</span>
+      <h2 data-i18n="k105">Tem dúvidas?</h2>
+    </div>
+    <div class="faq reveal">
+      <details open><summary data-i18n="k106">Como sei qual é o meu nível?</summary><p data-i18n="k107">Fazemos um teste de nível gratuito, escrito e oral, com cerca de 30 minutos. Pode ser feito na escola ou online.</p></details>
+      <details><summary data-i18n="k108">Posso começar a meio do ano?</summary><p data-i18n="k109">Sim. Abrimos novas turmas todos os meses e, nas aulas individuais, pode começar quando quiser.</p></details>
+      <details><summary data-i18n="k110">E se faltar a uma aula?</summary><p data-i18n="k111">Pode recuperá-la noutra turma do mesmo nível ou ver a gravação na plataforma online.</p></details>
+      <details><summary data-i18n="k112">Têm cursos para empresas?</summary><p data-i18n="k113">Sim. Avaliamos o nível da equipa e criamos um plano à medida, com aulas nas vossas instalações ou online.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="dark contact" id="contactos">
+  <div class="container contact-grid">
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="k5">Contactos</span>
+      <h2 data-i18n="k114">Marque a sua aula experimental</h2>
+      <p data-i18n="k115">A primeira aula e o teste de nível são gratuitos. Escolha a língua e o horário e respondemos em menos de 24 horas.</p>
+      <div class="c-line"><strong data-i18n="k116">Morada</strong><span>Rua Sá da Bandeira, 210<br>4000-427 Porto</span></div>
+      <div class="c-line"><strong data-i18n="k117">Telefone</strong><span>+351 22 123 4567 · +351 912 345 678</span></div>
+      <div class="c-line"><strong>Email</strong><span>ola@meridiano.pt</span></div>
+      <div class="c-line"><strong data-i18n="k118">Horário</strong><span data-i18n="k119">Segunda a sexta, 9h–21h · Sábado, 9h–13h</span></div>
+    </div>
+    <form class="form reveal" id="trialForm">
+      <h3 data-i18n="k6">Aula experimental grátis</h3>
+      <div class="fields">
+        <div class="field"><label for="f-name" data-i18n="k120">Nome</label><input id="f-name" required autocomplete="name"></div>
+        <div class="field"><label for="f-lang" data-i18n="k121">Língua</label>
+          <select id="f-lang">
+            <option value="Inglês" data-i18n="k15">Inglês</option><option value="Espanhol" data-i18n="k17">Espanhol</option><option value="Francês" data-i18n="k18">Francês</option><option value="Alemão" data-i18n="k19">Alemão</option>
+            <option value="Italiano" data-i18n="k20">Italiano</option><option value="Português para estrangeiros" data-i18n="k21">Português para estrangeiros</option><option value="Neerlandês" data-i18n="k22">Neerlandês</option><option value="Russo" data-i18n="k24">Russo</option>
+            <option value="Chinês" data-i18n="k25">Chinês</option><option value="Japonês" data-i18n="k26">Japonês</option><option value="Coreano" data-i18n="k27">Coreano</option><option value="Árabe" data-i18n="k28">Árabe</option>
+          </select></div>
+        <div class="field"><label for="f-level" data-i18n="k122">Nível atual</label>
+          <select id="f-level">
+            <option value="Não sei (quero fazer o teste)" data-i18n="k123">Não sei, quero fazer o teste</option>
+            <option value="Iniciante (A1–A2)" data-i18n="k124">Iniciante (A1–A2)</option>
+            <option value="Intermédio (B1–B2)" data-i18n="k125">Intermédio (B1–B2)</option>
+            <option value="Avançado (C1–C2)" data-i18n="k126">Avançado (C1–C2)</option>
+          </select></div>
+        <div class="field"><label for="f-course" data-i18n="k127">Curso</label>
+          <select id="f-course">
+            <option value="Curso em grupo" data-i18n="k128">Curso em grupo</option>
+            <option value="Curso intensivo" data-i18n="k129">Curso intensivo</option>
+            <option value="Aulas individuais" data-i18n="k34">Aulas individuais</option>
+            <option value="Crianças e jovens" data-i18n="k36">Crianças e jovens</option>
+            <option value="Empresas" data-i18n="k38">Empresas</option>
+            <option value="Preparação para exames" data-i18n="k40">Preparação para exames</option>
+          </select></div>
+        <div class="field"><label for="f-time" data-i18n="k130">Horário preferido</label>
+          <select id="f-time">
+            <option value="Manhã" data-i18n="k131">Manhã</option><option value="Tarde" data-i18n="k132">Tarde</option><option value="Noite" data-i18n="k133">Noite</option><option value="Sábado" data-i18n="k134">Sábado</option>
+          </select></div>
+        <div class="field"><label for="f-mode" data-i18n="k135">Modalidade</label>
+          <select id="f-mode">
+            <option value="Presencial" data-i18n="k136">Presencial</option><option value="Online" data-i18n="k137">Online</option>
+          </select></div>
+        <div class="field full"><label for="f-msg" data-i18n="k138">Mensagem (opcional)</label><textarea id="f-msg"></textarea></div>
+      </div>
+      <button type="submit" class="btn btn-wa" data-i18n="k139">💬 Marcar por WhatsApp</button>
+      <p class="form-note" data-i18n="k140">Os seus dados são usados apenas para responder ao seu pedido.</p>
+    </form>
+  </div>
+</section>
+
+<div class="map"><iframe src="https://www.google.com/maps?q=Porto&output=embed" loading="lazy" title="Mapa"></iframe></div>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div><a href="#inicio" class="logo"><span class="mark"><svg viewBox="0 0 46 46" fill="none" stroke="#f0b24a" stroke-width="1.6"><circle cx="23" cy="23" r="20"/><ellipse cx="23" cy="23" rx="9" ry="20"/><path d="M3 23h40M6 13h34M6 33h34"/></svg></span><span><strong>Meridiano</strong><small data-i18n="k0">Escola de Línguas</small></span></a><p data-i18n="k141">Escola de línguas no Porto. Doze línguas, turmas pequenas e professores nativos, para adultos, crianças e empresas.</p></div>
+      <div><h4 data-i18n="k142">Navegação</h4><ul><li><a href="#linguas" data-i18n="k1">Línguas</a></li><li><a href="#cursos" data-i18n="k2">Cursos</a></li><li><a href="#precos" data-i18n="k4">Preços</a></li><li><a href="#contactos" data-i18n="k5">Contactos</a></li></ul></div>
+      <div><h4 data-i18n="k143">Siga-nos</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li><li><a href="#">LinkedIn</a></li></ul></div>
+    </div>
+    <div class="legal">© <span id="y"></span> Meridiano · <span data-i18n="k144">Todos os direitos reservados</span></div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/351912345678" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+
+<script>
+  const header=document.getElementById('header');
+  const onScroll=()=>header.classList.toggle('scrolled',scrollY>60);
+  addEventListener('scroll',onScroll);onScroll();
+  document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('menu').classList.remove('open')));
+
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  document.querySelectorAll('.ph img, .lcard .fl').forEach(img=>{
+    const hide=()=>img.style.visibility='hidden';
+    if(img.complete&&img.naturalWidth===0)hide();else img.addEventListener('error',hide);
+  });
+
+  const noIntro=document.documentElement.classList.contains('no-intro');
+  setTimeout(()=>{const i=document.querySelector('.intro');if(i)i.remove()},4400);
+
+  // Fotografias de fundo a trocar
+  const slides=[...document.querySelectorAll('.slide')];let cur=0;
+  setTimeout(function next(){slides[cur].classList.remove('on');cur=(cur+1)%slides.length;slides[cur].classList.add('on');setTimeout(next,6000)},noIntro?6000:8800);
+
+  // Números a contar
+  setTimeout(()=>{
+    document.querySelectorAll('[data-count]').forEach(el=>{
+      const end=+el.dataset.count,t0=performance.now(),dur=1600;
+      const step=t=>{const k=Math.min((t-t0)/dur,1);el.textContent=Math.round(end*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(step)};
+      el.textContent='0';requestAnimationFrame(step);
+    });
+  },noIntro?1300:4500);
+
+  // Aula experimental: abre o WhatsApp com a mensagem já escrita (sempre em português)
+  document.getElementById('trialForm').addEventListener('submit',e=>{
+    e.preventDefault();
+    const v=id=>document.getElementById(id).value.trim();
+    let msg=`Olá! Gostaria de marcar uma aula experimental grátis.\nNome: ${v('f-name')}\nLíngua: ${v('f-lang')}\nNível atual: ${v('f-level')}\nCurso: ${v('f-course')}\nHorário preferido: ${v('f-time')}\nModalidade: ${v('f-mode')}`;
+    if(v('f-msg'))msg+=`\nMensagem: ${v('f-msg')}`;
+    window.open('https://wa.me/351912345678?text='+encodeURIComponent(msg),'_blank');
+  });
+
+  document.getElementById('y').textContent=new Date().getFullYear();
+
+  // ---------- IDIOMAS ----------
+  const I18N = {"en": {"k0": "Language School", "k1": "Languages", "k2": "Courses", "k3": "Method", "k4": "Prices", "k5": "Contact", "k6": "Free trial lesson", "k7": "Language school · Porto", "k8": "Speak to the world <em>with confidence.</em>", "k9": "English, Spanish, French, German and eight more languages, in small groups and with native teachers. For adults, children and companies.", "k10": "See courses", "k11": "Years teaching", "k12": "Pass rate in official exams", "k13": "Twelve languages, <em>one place</em>", "k14": "All taught by native teachers, from your first contact with the language all the way to fluency.", "k15": "English", "k16": "Levels A1 to C2", "k17": "Spanish", "k18": "French", "k19": "German", "k20": "Italian", "k21": "Portuguese for foreigners", "k22": "Dutch", "k23": "Levels A1 to B2", "k24": "Russian", "k25": "Chinese", "k26": "Japanese", "k27": "Korean", "k28": "Arabic", "k29": "A course for <em>every goal</em>", "k30": "Learn at your own pace, in a group or one-to-one, at the school or from home.", "k31": "Most popular", "k32": "Group courses", "k33": "Classes of 4 to 8 students, twice a week, in the morning, afternoon or evening.", "k34": "Private lessons", "k35": "A teacher just for you, with flexible hours and a tailor-made plan.", "k36": "Children and teens", "k37": "Lively lessons from age 4, with games, music and projects.", "k38": "Companies", "k39": "Team training at your premises or online, with progress reports.", "k40": "Exam preparation", "k41": "Cambridge, IELTS, DELE, DELF and Goethe, with mock exams and close guidance.", "k42": "Online lessons", "k43": "The same quality as in-person lessons, live and on our own platform.", "k44": "Our method", "k45": "You learn to speak <em>by speaking.</em>", "k46": "From the very first lesson, the focus is on conversation. Grammar comes naturally, always linked to real situations.", "k47": "Small groups", "k48": "A maximum of 8 students per class, so everyone speaks in every lesson.", "k49": "Native teachers", "k50": "All certified and experienced in teaching foreigners.", "k51": "Online platform", "k52": "Exercises, audio and class recordings available 24 hours a day.", "k53": "Certificate for every level", "k54": "At the end of each level you receive a certificate of attendance and achievement.", "k55": "Take a free level test", "k56": "Levels", "k57": "From your first hello <em>to fluency</em>", "k58": "We follow the Common European Framework of Reference for Languages. Each level has between 60 and 90 hours of lessons.", "k59": "Beginner", "k60": "Introduces themselves and uses everyday expressions.", "k61": "Elementary", "k62": "Talks about family, work and shopping.", "k63": "Intermediate", "k64": "Handles travel situations and describes experiences.", "k65": "Upper intermediate", "k66": "Converses fluently with native speakers.", "k67": "Advanced", "k68": "Uses the language effectively at work and in studies.", "k69": "Proficiency", "k70": "Understands virtually everything and expresses themselves precisely.", "k71": "Clear prices, <em>no surprises</em>", "k72": "Free enrolment this month and course materials included in every course.", "k73": "Group", "k74": "2 lessons of 90 minutes per week", "k75": "per month", "k76": "Classes of up to 8 students", "k77": "Course materials included", "k78": "Access to the online platform", "k79": "Level certificate", "k80": "Start now", "k81": "Faster results", "k82": "Intensive", "k83": "4 lessons of 90 minutes per week", "k84": "Classes of up to 6 students", "k85": "Weekly conversation club", "k86": "One level in half the time", "k87": "One-to-one", "k88": "60-minute lessons tailored to you", "k89": "per lesson", "k90": "Fully flexible schedule", "k91": "In person or online", "k92": "Personalised study plan", "k93": "Discount on 10-lesson packs", "k94": "Discounts for siblings, students and companies. Monthly payment, no commitment.", "k95": "We prepare you for official exams", "k96": "Reviews", "k97": "Students already speaking <em>to the world</em>", "k98": "“In six months I went from A2 to B2 in English and got the job I wanted.”", "k99": "English · Intensive course", "k100": "“I arrived in Portugal without speaking Portuguese. Today I handle everything on my own and I've made lots of friends.”", "k101": "Portuguese for foreigners · Group", "k102": "“Our children love the lessons. They learn through play and are no longer shy about speaking English.”", "k103": "Parents · Children and teens", "k104": "FAQ", "k105": "Any questions?", "k106": "How do I know my level?", "k107": "We run a free written and oral level test that takes about 30 minutes. It can be done at the school or online.", "k108": "Can I start in the middle of the year?", "k109": "Yes. We open new classes every month, and with private lessons you can start whenever you like.", "k110": "What if I miss a lesson?", "k111": "You can make it up in another class at the same level or watch the recording on the online platform.", "k112": "Do you offer courses for companies?", "k113": "Yes. We assess your team's level and create a tailored plan, with lessons at your premises or online.", "k114": "Book your trial lesson", "k115": "The first lesson and the level test are free. Choose the language and time, and we'll reply within 24 hours.", "k116": "Address", "k117": "Phone", "k118": "Opening hours", "k119": "Monday to Friday, 9am–9pm · Saturday, 9am–1pm", "k120": "Name", "k121": "Language", "k122": "Current level", "k123": "I don't know, I'd like to take the test", "k124": "Beginner (A1–A2)", "k125": "Intermediate (B1–B2)", "k126": "Advanced (C1–C2)", "k127": "Course", "k128": "Group course", "k129": "Intensive course", "k130": "Preferred time", "k131": "Morning", "k132": "Afternoon", "k133": "Evening", "k134": "Saturday", "k135": "Format", "k136": "In person", "k137": "Online", "k138": "Message (optional)", "k139": "💬 Book via WhatsApp", "k140": "Your details are used only to reply to your request.", "k141": "Language school in Porto. Twelve languages, small groups and native teachers, for adults, children and companies.", "k142": "Navigation", "k143": "Follow us", "k144": "All rights reserved"}, "es": {"k0": "Escuela de Idiomas", "k1": "Idiomas", "k2": "Cursos", "k3": "Método", "k4": "Precios", "k5": "Contacto", "k6": "Clase de prueba gratis", "k7": "Escuela de idiomas · Oporto", "k8": "Habla con el mundo <em>con confianza.</em>", "k9": "Inglés, español, francés, alemán y ocho idiomas más, en grupos reducidos y con profesores nativos. Para adultos, niños y empresas.", "k10": "Ver cursos", "k11": "Años enseñando", "k12": "Aprobados en exámenes oficiales", "k13": "Doce idiomas, <em>un solo lugar</em>", "k14": "Todos impartidos por profesores nativos, desde el primer contacto con el idioma hasta la fluidez.", "k15": "Inglés", "k16": "Niveles A1 a C2", "k17": "Español", "k18": "Francés", "k19": "Alemán", "k20": "Italiano", "k21": "Portugués para extranjeros", "k22": "Neerlandés", "k23": "Niveles A1 a B2", "k24": "Ruso", "k25": "Chino", "k26": "Japonés", "k27": "Coreano", "k28": "Árabe", "k29": "Un curso para <em>cada objetivo</em>", "k30": "Aprende a tu ritmo, en grupo o de forma individual, en la escuela o desde casa.", "k31": "El más solicitado", "k32": "Cursos en grupo", "k33": "Grupos de 4 a 8 alumnos, dos veces por semana, por la mañana, por la tarde o por la noche.", "k34": "Clases individuales", "k35": "Un profesor solo para ti, con horarios flexibles y un plan a medida.", "k36": "Niños y jóvenes", "k37": "Clases dinámicas a partir de los 4 años, con juegos, música y proyectos.", "k38": "Empresas", "k39": "Formación para equipos, en vuestras instalaciones u online, con informes de progreso.", "k40": "Preparación de exámenes", "k41": "Cambridge, IELTS, DELE, DELF y Goethe, con simulacros de examen y seguimiento cercano.", "k42": "Clases online", "k43": "La misma calidad que las clases presenciales, en directo y con plataforma propia.", "k44": "Nuestro método", "k45": "Se aprende a hablar <em>hablando.</em>", "k46": "Desde la primera clase, el foco está en la conversación. La gramática llega con naturalidad, siempre unida a situaciones reales.", "k47": "Grupos reducidos", "k48": "Máximo 8 alumnos por grupo, para que todos hablen en todas las clases.", "k49": "Profesores nativos", "k50": "Todos titulados y con experiencia en la enseñanza a extranjeros.", "k51": "Plataforma online", "k52": "Ejercicios, audios y grabaciones de las clases disponibles las 24 horas.", "k53": "Certificado en cada nivel", "k54": "Al final de cada nivel recibes un certificado de asistencia y aprovechamiento.", "k55": "Hacer prueba de nivel gratis", "k56": "Niveles", "k57": "Del primer hola <em>a la fluidez</em>", "k58": "Seguimos el Marco Común Europeo de Referencia para las Lenguas. Cada nivel tiene entre 60 y 90 horas de clase.", "k59": "Iniciación", "k60": "Se presenta y usa expresiones cotidianas.", "k61": "Elemental", "k62": "Habla de la familia, el trabajo y las compras.", "k63": "Intermedio", "k64": "Resuelve situaciones de viaje y cuenta experiencias.", "k65": "Intermedio alto", "k66": "Conversa con fluidez con hablantes nativos.", "k67": "Avanzado", "k68": "Usa el idioma con eficacia en el trabajo y los estudios.", "k69": "Maestría", "k70": "Comprende prácticamente todo y se expresa con precisión.", "k71": "Precios claros, <em>sin sorpresas</em>", "k72": "Matrícula gratuita este mes y material didáctico incluido en todos los cursos.", "k73": "Grupo", "k74": "2 clases de 90 minutos por semana", "k75": "al mes", "k76": "Grupos de hasta 8 alumnos", "k77": "Material didáctico incluido", "k78": "Acceso a la plataforma online", "k79": "Certificado de nivel", "k80": "Empezar ahora", "k81": "Resultados más rápidos", "k82": "Intensivo", "k83": "4 clases de 90 minutos por semana", "k84": "Grupos de hasta 6 alumnos", "k85": "Club de conversación semanal", "k86": "Un nivel en la mitad de tiempo", "k87": "Individual", "k88": "Clases de 60 minutos a tu medida", "k89": "por clase", "k90": "Horario totalmente flexible", "k91": "Presencial u online", "k92": "Plan de estudio personalizado", "k93": "Descuento en packs de 10 clases", "k94": "Descuentos para hermanos, estudiantes y empresas. Pago mensual, sin permanencia.", "k95": "Preparamos para los exámenes oficiales", "k96": "Opiniones", "k97": "Alumnos que ya hablan <em>con el mundo</em>", "k98": "“En seis meses pasé del A2 al B2 en inglés y conseguí el trabajo que quería.”", "k99": "Inglés · Curso intensivo", "k100": "“Llegué a Portugal sin hablar portugués. Hoy me las arreglo sola y ya he hecho muchos amigos.”", "k101": "Portugués para extranjeros · Grupo", "k102": "“A nuestros hijos les encantan las clases. Aprenden jugando y ya no les da vergüenza hablar inglés.”", "k103": "Padres · Niños y jóvenes", "k104": "Preguntas frecuentes", "k105": "¿Tienes dudas?", "k106": "¿Cómo sé cuál es mi nivel?", "k107": "Hacemos una prueba de nivel gratuita, escrita y oral, de unos 30 minutos. Puede hacerse en la escuela u online.", "k108": "¿Puedo empezar a mitad de año?", "k109": "Sí. Abrimos nuevos grupos cada mes y, en las clases individuales, puedes empezar cuando quieras.", "k110": "¿Y si falto a una clase?", "k111": "Puedes recuperarla en otro grupo del mismo nivel o ver la grabación en la plataforma online.", "k112": "¿Tenéis cursos para empresas?", "k113": "Sí. Evaluamos el nivel del equipo y creamos un plan a medida, con clases en vuestras instalaciones u online.", "k114": "Reserva tu clase de prueba", "k115": "La primera clase y la prueba de nivel son gratuitas. Elige el idioma y el horario y te respondemos en menos de 24 horas.", "k116": "Dirección", "k117": "Teléfono", "k118": "Horario", "k119": "Lunes a viernes, 9:00–21:00 · Sábado, 9:00–13:00", "k120": "Nombre", "k121": "Idioma", "k122": "Nivel actual", "k123": "No lo sé, quiero hacer la prueba", "k124": "Principiante (A1–A2)", "k125": "Intermedio (B1–B2)", "k126": "Avanzado (C1–C2)", "k127": "Curso", "k128": "Curso en grupo", "k129": "Curso intensivo", "k130": "Horario preferido", "k131": "Mañana", "k132": "Tarde", "k133": "Noche", "k134": "Sábado", "k135": "Modalidad", "k136": "Presencial", "k137": "Online", "k138": "Mensaje (opcional)", "k139": "💬 Reservar por WhatsApp", "k140": "Tus datos se usan solo para responder a tu solicitud.", "k141": "Escuela de idiomas en Oporto. Doce idiomas, grupos reducidos y profesores nativos, para adultos, niños y empresas.", "k142": "Navegación", "k143": "Síguenos", "k144": "Todos los derechos reservados"}, "fr": {"k0": "École de Langues", "k1": "Langues", "k2": "Cours", "k3": "Méthode", "k4": "Tarifs", "k5": "Contact", "k6": "Cours d'essai gratuit", "k7": "École de langues · Porto", "k8": "Parlez au monde <em>avec assurance.</em>", "k9": "Anglais, espagnol, français, allemand et huit autres langues, en petits groupes et avec des professeurs natifs. Pour adultes, enfants et entreprises.", "k10": "Voir les cours", "k11": "Ans d'enseignement", "k12": "Réussite aux examens officiels", "k13": "Douze langues, <em>un seul lieu</em>", "k14": "Toutes enseignées par des professeurs natifs, du premier contact avec la langue jusqu'à l'aisance.", "k15": "Anglais", "k16": "Niveaux A1 à C2", "k17": "Espagnol", "k18": "Français", "k19": "Allemand", "k20": "Italien", "k21": "Portugais pour étrangers", "k22": "Néerlandais", "k23": "Niveaux A1 à B2", "k24": "Russe", "k25": "Chinois", "k26": "Japonais", "k27": "Coréen", "k28": "Arabe", "k29": "Un cours pour <em>chaque objectif</em>", "k30": "Apprenez à votre rythme, en groupe ou en individuel, à l'école ou depuis chez vous.", "k31": "Le plus demandé", "k32": "Cours collectifs", "k33": "Groupes de 4 à 8 élèves, deux fois par semaine, le matin, l'après-midi ou le soir.", "k34": "Cours particuliers", "k35": "Un professeur rien que pour vous, avec des horaires flexibles et un programme sur mesure.", "k36": "Enfants et ados", "k37": "Des cours dynamiques dès 4 ans, avec jeux, musique et projets.", "k38": "Entreprises", "k39": "Formation des équipes, dans vos locaux ou en ligne, avec rapports de progression.", "k40": "Préparation aux examens", "k41": "Cambridge, IELTS, DELE, DELF et Goethe, avec examens blancs et suivi rapproché.", "k42": "Cours en ligne", "k43": "La même qualité que les cours en présentiel, en direct et sur notre propre plateforme.", "k44": "Notre méthode", "k45": "On apprend à parler <em>en parlant.</em>", "k46": "Dès le premier cours, l'accent est mis sur la conversation. La grammaire vient naturellement, toujours liée à des situations réelles.", "k47": "Petits groupes", "k48": "8 élèves maximum par groupe, pour que chacun parle à chaque cours.", "k49": "Professeurs natifs", "k50": "Tous diplômés et expérimentés dans l'enseignement aux étrangers.", "k51": "Plateforme en ligne", "k52": "Exercices, audios et enregistrements des cours disponibles 24 h/24.", "k53": "Un certificat à chaque niveau", "k54": "À la fin de chaque niveau, vous recevez une attestation d'assiduité et de réussite.", "k55": "Faire le test de niveau gratuit", "k56": "Niveaux", "k57": "Du premier bonjour <em>à l'aisance</em>", "k58": "Nous suivons le Cadre européen commun de référence pour les langues. Chaque niveau compte entre 60 et 90 heures de cours.", "k59": "Découverte", "k60": "Se présente et utilise des expressions courantes.", "k61": "Élémentaire", "k62": "Parle de sa famille, de son travail et des achats.", "k63": "Intermédiaire", "k64": "Se débrouille en voyage et raconte des expériences.", "k65": "Intermédiaire avancé", "k66": "Converse avec aisance avec des locuteurs natifs.", "k67": "Avancé", "k68": "Utilise la langue efficacement au travail et dans les études.", "k69": "Maîtrise", "k70": "Comprend pratiquement tout et s'exprime avec précision.", "k71": "Des tarifs clairs, <em>sans surprises</em>", "k72": "Inscription gratuite ce mois-ci et matériel pédagogique inclus dans tous les cours.", "k73": "Groupe", "k74": "2 cours de 90 minutes par semaine", "k75": "par mois", "k76": "Groupes de 8 élèves maximum", "k77": "Matériel pédagogique inclus", "k78": "Accès à la plateforme en ligne", "k79": "Certificat de niveau", "k80": "Commencer maintenant", "k81": "Résultats plus rapides", "k82": "Intensif", "k83": "4 cours de 90 minutes par semaine", "k84": "Groupes de 6 élèves maximum", "k85": "Club de conversation hebdomadaire", "k86": "Un niveau en deux fois moins de temps", "k87": "Individuel", "k88": "Cours de 60 minutes sur mesure", "k89": "par cours", "k90": "Horaires entièrement flexibles", "k91": "En présentiel ou en ligne", "k92": "Programme d'études personnalisé", "k93": "Réduction sur les forfaits de 10 cours", "k94": "Réductions pour frères et sœurs, étudiants et entreprises. Paiement mensuel, sans engagement.", "k95": "Nous préparons aux examens officiels", "k96": "Avis", "k97": "Des élèves qui parlent déjà <em>au monde</em>", "k98": "« En six mois, je suis passée du A2 au B2 en anglais et j'ai obtenu le poste que je voulais. »", "k99": "Anglais · Cours intensif", "k100": "« Je suis arrivée au Portugal sans parler portugais. Aujourd'hui, je me débrouille seule et je me suis fait beaucoup d'amis. »", "k101": "Portugais pour étrangers · Groupe", "k102": "« Nos enfants adorent les cours. Ils apprennent en jouant et n'ont plus peur de parler anglais. »", "k103": "Parents · Enfants et ados", "k104": "Questions fréquentes", "k105": "Des questions ?", "k106": "Comment connaître mon niveau ?", "k107": "Nous proposons un test de niveau gratuit, écrit et oral, d'environ 30 minutes. Il peut se faire à l'école ou en ligne.", "k108": "Puis-je commencer en cours d'année ?", "k109": "Oui. Nous ouvrons de nouveaux groupes chaque mois et, en cours particuliers, vous pouvez commencer quand vous voulez.", "k110": "Et si je manque un cours ?", "k111": "Vous pouvez le rattraper dans un autre groupe du même niveau ou regarder l'enregistrement sur la plateforme en ligne.", "k112": "Proposez-vous des cours pour les entreprises ?", "k113": "Oui. Nous évaluons le niveau de l'équipe et créons un programme sur mesure, avec des cours dans vos locaux ou en ligne.", "k114": "Réservez votre cours d'essai", "k115": "Le premier cours et le test de niveau sont gratuits. Choisissez la langue et l'horaire, nous répondons en moins de 24 heures.", "k116": "Adresse", "k117": "Téléphone", "k118": "Horaires", "k119": "Du lundi au vendredi, 9 h–21 h · Samedi, 9 h–13 h", "k120": "Nom", "k121": "Langue", "k122": "Niveau actuel", "k123": "Je ne sais pas, je veux faire le test", "k124": "Débutant (A1–A2)", "k125": "Intermédiaire (B1–B2)", "k126": "Avancé (C1–C2)", "k127": "Cours", "k128": "Cours collectif", "k129": "Cours intensif", "k130": "Horaire préféré", "k131": "Matin", "k132": "Après-midi", "k133": "Soir", "k134": "Samedi", "k135": "Modalité", "k136": "En présentiel", "k137": "En ligne", "k138": "Message (facultatif)", "k139": "💬 Réserver via WhatsApp", "k140": "Vos données servent uniquement à répondre à votre demande.", "k141": "École de langues à Porto. Douze langues, petits groupes et professeurs natifs, pour adultes, enfants et entreprises.", "k142": "Navigation", "k143": "Suivez-nous", "k144": "Tous droits réservés"}, "it": {"k0": "Scuola di Lingue", "k1": "Lingue", "k2": "Corsi", "k3": "Metodo", "k4": "Prezzi", "k5": "Contatti", "k6": "Lezione di prova gratuita", "k7": "Scuola di lingue · Porto", "k8": "Parla con il mondo <em>con sicurezza.</em>", "k9": "Inglese, spagnolo, francese, tedesco e altre otto lingue, in piccoli gruppi e con insegnanti madrelingua. Per adulti, bambini e aziende.", "k10": "Vedi i corsi", "k11": "Anni di insegnamento", "k12": "Promossi agli esami ufficiali", "k13": "Dodici lingue, <em>un solo luogo</em>", "k14": "Tutte insegnate da docenti madrelingua, dal primo contatto con la lingua fino alla padronanza.", "k15": "Inglese", "k16": "Livelli da A1 a C2", "k17": "Spagnolo", "k18": "Francese", "k19": "Tedesco", "k20": "Italiano", "k21": "Portoghese per stranieri", "k22": "Olandese", "k23": "Livelli da A1 a B2", "k24": "Russo", "k25": "Cinese", "k26": "Giapponese", "k27": "Coreano", "k28": "Arabo", "k29": "Un corso per <em>ogni obiettivo</em>", "k30": "Impara al tuo ritmo, in gruppo o individualmente, a scuola o da casa.", "k31": "Il più richiesto", "k32": "Corsi di gruppo", "k33": "Classi da 4 a 8 studenti, due volte a settimana, di mattina, di pomeriggio o di sera.", "k34": "Lezioni individuali", "k35": "Un insegnante tutto per te, con orari flessibili e un piano su misura.", "k36": "Bambini e ragazzi", "k37": "Lezioni dinamiche dai 4 anni, con giochi, musica e progetti.", "k38": "Aziende", "k39": "Formazione per i team, nella vostra sede oppure online, con report sui progressi.", "k40": "Preparazione agli esami", "k41": "Cambridge, IELTS, DELE, DELF e Goethe, con simulazioni d'esame e un supporto costante.", "k42": "Lezioni online", "k43": "La stessa qualità delle lezioni in presenza, in diretta e sulla nostra piattaforma.", "k44": "Il nostro metodo", "k45": "Si impara a parlare <em>parlando.</em>", "k46": "Fin dalla prima lezione, il centro è la conversazione. La grammatica arriva in modo naturale, sempre legata a situazioni reali.", "k47": "Classi piccole", "k48": "Al massimo 8 studenti per classe, così tutti parlano in ogni lezione.", "k49": "Insegnanti madrelingua", "k50": "Tutti qualificati e con esperienza nell'insegnamento agli stranieri.", "k51": "Piattaforma online", "k52": "Esercizi, audio e registrazioni delle lezioni disponibili 24 ore su 24.", "k53": "Certificato per ogni livello", "k54": "Alla fine di ogni livello ricevi un attestato di frequenza e profitto.", "k55": "Fai il test di livello gratuito", "k56": "Livelli", "k57": "Dal primo ciao <em>alla padronanza</em>", "k58": "Seguiamo il Quadro comune europeo di riferimento per le lingue. Ogni livello prevede da 60 a 90 ore di lezione.", "k59": "Principiante", "k60": "Si presenta e usa espressioni quotidiane.", "k61": "Elementare", "k62": "Parla della famiglia, del lavoro e degli acquisti.", "k63": "Intermedio", "k64": "Se la cava in viaggio e racconta esperienze.", "k65": "Intermedio superiore", "k66": "Conversa con scioltezza con parlanti nativi.", "k67": "Avanzato", "k68": "Usa la lingua in modo efficace nel lavoro e nello studio.", "k69": "Padronanza", "k70": "Capisce praticamente tutto e si esprime con precisione.", "k71": "Prezzi chiari, <em>senza sorprese</em>", "k72": "Iscrizione gratuita questo mese e materiale didattico incluso in tutti i corsi.", "k73": "Gruppo", "k74": "2 lezioni da 90 minuti a settimana", "k75": "al mese", "k76": "Classi fino a 8 studenti", "k77": "Materiale didattico incluso", "k78": "Accesso alla piattaforma online", "k79": "Certificato di livello", "k80": "Inizia ora", "k81": "Risultati più rapidi", "k82": "Intensivo", "k83": "4 lezioni da 90 minuti a settimana", "k84": "Classi fino a 6 studenti", "k85": "Club di conversazione settimanale", "k86": "Un livello in metà tempo", "k87": "Individuale", "k88": "Lezioni da 60 minuti su misura", "k89": "a lezione", "k90": "Orario completamente flessibile", "k91": "In presenza o online", "k92": "Piano di studio personalizzato", "k93": "Sconto sui pacchetti da 10 lezioni", "k94": "Sconti per fratelli, studenti e aziende. Pagamento mensile, senza vincoli.", "k95": "Prepariamo agli esami ufficiali", "k96": "Recensioni", "k97": "Studenti che già parlano <em>con il mondo</em>", "k98": "“In sei mesi sono passata dall'A2 al B2 in inglese e ho ottenuto il lavoro che volevo.”", "k99": "Inglese · Corso intensivo", "k100": "“Sono arrivata in Portogallo senza parlare portoghese. Oggi me la cavo da sola e ho fatto tanti amici.”", "k101": "Portoghese per stranieri · Gruppo", "k102": "“I nostri figli adorano le lezioni. Imparano giocando e non si vergognano più di parlare inglese.”", "k103": "Genitori · Bambini e ragazzi", "k104": "Domande frequenti", "k105": "Hai dei dubbi?", "k106": "Come faccio a sapere il mio livello?", "k107": "Facciamo un test di livello gratuito, scritto e orale, di circa 30 minuti. Si può svolgere a scuola o online.", "k108": "Posso iniziare a metà anno?", "k109": "Sì. Apriamo nuove classi ogni mese e, con le lezioni individuali, puoi iniziare quando vuoi.", "k110": "E se salto una lezione?", "k111": "Puoi recuperarla in un'altra classe dello stesso livello o guardare la registrazione sulla piattaforma online.", "k112": "Avete corsi per aziende?", "k113": "Sì. Valutiamo il livello del team e creiamo un piano su misura, con lezioni nella vostra sede oppure online.", "k114": "Prenota la tua lezione di prova", "k115": "La prima lezione e il test di livello sono gratuiti. Scegli la lingua e l'orario e ti rispondiamo entro 24 ore.", "k116": "Indirizzo", "k117": "Telefono", "k118": "Orari", "k119": "Dal lunedì al venerdì, 9–21 · Sabato, 9–13", "k120": "Nome", "k121": "Lingua", "k122": "Livello attuale", "k123": "Non lo so, voglio fare il test", "k124": "Principiante (A1–A2)", "k125": "Intermedio (B1–B2)", "k126": "Avanzato (C1–C2)", "k127": "Corso", "k128": "Corso di gruppo", "k129": "Corso intensivo", "k130": "Orario preferito", "k131": "Mattina", "k132": "Pomeriggio", "k133": "Sera", "k134": "Sabato", "k135": "Modalità", "k136": "In presenza", "k137": "Online", "k138": "Messaggio (facoltativo)", "k139": "💬 Prenota su WhatsApp", "k140": "I tuoi dati vengono usati solo per rispondere alla tua richiesta.", "k141": "Scuola di lingue a Porto. Dodici lingue, classi piccole e insegnanti madrelingua, per adulti, bambini e aziende.", "k142": "Navigazione", "k143": "Seguici", "k144": "Tutti i diritti riservati"}, "de": {"k0": "Sprachschule", "k1": "Sprachen", "k2": "Kurse", "k3": "Methode", "k4": "Preise", "k5": "Kontakt", "k6": "Kostenlose Probestunde", "k7": "Sprachschule · Porto", "k8": "Sprechen Sie mit der Welt – <em>mit Selbstvertrauen.</em>", "k9": "Englisch, Spanisch, Französisch, Deutsch und acht weitere Sprachen, in kleinen Gruppen und mit Muttersprachlern. Für Erwachsene, Kinder und Unternehmen.", "k10": "Kurse ansehen", "k11": "Jahre Unterricht", "k12": "Bestehensquote bei offiziellen Prüfungen", "k13": "Zwölf Sprachen, <em>ein Ort</em>", "k14": "Alle von muttersprachlichen Lehrkräften unterrichtet – vom ersten Kontakt mit der Sprache bis zur fließenden Beherrschung.", "k15": "Englisch", "k16": "Niveau A1 bis C2", "k17": "Spanisch", "k18": "Französisch", "k19": "Deutsch", "k20": "Italienisch", "k21": "Portugiesisch für Ausländer", "k22": "Niederländisch", "k23": "Niveau A1 bis B2", "k24": "Russisch", "k25": "Chinesisch", "k26": "Japanisch", "k27": "Koreanisch", "k28": "Arabisch", "k29": "Ein Kurs für <em>jedes Ziel</em>", "k30": "Lernen Sie in Ihrem Tempo, in der Gruppe oder einzeln, in der Schule oder von zu Hause.", "k31": "Am beliebtesten", "k32": "Gruppenkurse", "k33": "Gruppen von 4 bis 8 Teilnehmern, zweimal pro Woche, morgens, nachmittags oder abends.", "k34": "Einzelunterricht", "k35": "Eine Lehrkraft nur für Sie, mit flexiblen Zeiten und einem individuellen Plan.", "k36": "Kinder und Jugendliche", "k37": "Lebendiger Unterricht ab 4 Jahren, mit Spielen, Musik und Projekten.", "k38": "Unternehmen", "k39": "Schulungen für Teams, bei Ihnen vor Ort oder online, mit Fortschrittsberichten.", "k40": "Prüfungsvorbereitung", "k41": "Cambridge, IELTS, DELE, DELF und Goethe, mit Probeprüfungen und enger Begleitung.", "k42": "Online-Unterricht", "k43": "Die gleiche Qualität wie im Präsenzunterricht, live und auf unserer eigenen Plattform.", "k44": "Unsere Methode", "k45": "Sprechen lernt man <em>durch Sprechen.</em>", "k46": "Ab der ersten Stunde steht das Gespräch im Mittelpunkt. Die Grammatik kommt ganz natürlich, immer verbunden mit echten Situationen.", "k47": "Kleine Gruppen", "k48": "Maximal 8 Teilnehmer pro Gruppe, damit jeder in jeder Stunde spricht.", "k49": "Muttersprachliche Lehrkräfte", "k50": "Alle zertifiziert und erfahren im Unterrichten von Ausländern.", "k51": "Online-Plattform", "k52": "Übungen, Audios und Aufzeichnungen der Stunden rund um die Uhr verfügbar.", "k53": "Zertifikat für jedes Niveau", "k54": "Am Ende jedes Niveaus erhalten Sie eine Teilnahme- und Leistungsbescheinigung.", "k55": "Kostenlosen Einstufungstest machen", "k56": "Niveaus", "k57": "Vom ersten Hallo <em>bis zur Sprachgewandtheit</em>", "k58": "Wir folgen dem Gemeinsamen Europäischen Referenzrahmen für Sprachen. Jedes Niveau umfasst 60 bis 90 Unterrichtsstunden.", "k59": "Einstieg", "k60": "Stellt sich vor und verwendet Alltagsausdrücke.", "k61": "Grundlagen", "k62": "Spricht über Familie, Arbeit und Einkäufe.", "k63": "Mittelstufe", "k64": "Meistert Reisesituationen und erzählt von Erlebnissen.", "k65": "Obere Mittelstufe", "k66": "Unterhält sich fließend mit Muttersprachlern.", "k67": "Fortgeschritten", "k68": "Nutzt die Sprache wirksam im Beruf und im Studium.", "k69": "Kompetente Sprachbeherrschung", "k70": "Versteht praktisch alles und drückt sich präzise aus.", "k71": "Klare Preise, <em>keine Überraschungen</em>", "k72": "Kostenlose Anmeldung in diesem Monat und Lehrmaterial in allen Kursen inbegriffen.", "k73": "Gruppe", "k74": "2 Stunden à 90 Minuten pro Woche", "k75": "pro Monat", "k76": "Gruppen bis 8 Teilnehmer", "k77": "Lehrmaterial inbegriffen", "k78": "Zugang zur Online-Plattform", "k79": "Niveauzertifikat", "k80": "Jetzt starten", "k81": "Schnellere Ergebnisse", "k82": "Intensiv", "k83": "4 Stunden à 90 Minuten pro Woche", "k84": "Gruppen bis 6 Teilnehmer", "k85": "Wöchentlicher Konversationsclub", "k86": "Ein Niveau in der halben Zeit", "k87": "Einzeln", "k88": "60-Minuten-Stunden nach Maß", "k89": "pro Stunde", "k90": "Völlig flexible Zeiten", "k91": "Vor Ort oder online", "k92": "Persönlicher Lernplan", "k93": "Rabatt auf 10er-Pakete", "k94": "Rabatte für Geschwister, Studierende und Unternehmen. Monatliche Zahlung, ohne Mindestlaufzeit.", "k95": "Wir bereiten auf offizielle Prüfungen vor", "k96": "Bewertungen", "k97": "Lernende, die schon <em>mit der Welt sprechen</em>", "k98": "„In sechs Monaten bin ich in Englisch von A2 auf B2 gekommen und habe den Job bekommen, den ich wollte.“", "k99": "Englisch · Intensivkurs", "k100": "„Ich kam nach Portugal, ohne Portugiesisch zu sprechen. Heute erledige ich alles allein und habe viele Freunde gefunden.“", "k101": "Portugiesisch für Ausländer · Gruppe", "k102": "„Unsere Kinder lieben den Unterricht. Sie lernen spielerisch und trauen sich jetzt, Englisch zu sprechen.“", "k103": "Eltern · Kinder und Jugendliche", "k104": "Häufige Fragen", "k105": "Noch Fragen?", "k106": "Wie finde ich mein Niveau heraus?", "k107": "Wir bieten einen kostenlosen schriftlichen und mündlichen Einstufungstest von etwa 30 Minuten an – in der Schule oder online.", "k108": "Kann ich mitten im Jahr anfangen?", "k109": "Ja. Wir starten jeden Monat neue Gruppen, und beim Einzelunterricht können Sie jederzeit beginnen.", "k110": "Und wenn ich eine Stunde verpasse?", "k111": "Sie können sie in einer anderen Gruppe auf demselben Niveau nachholen oder die Aufzeichnung auf der Online-Plattform ansehen.", "k112": "Bieten Sie Kurse für Unternehmen an?", "k113": "Ja. Wir ermitteln das Niveau des Teams und erstellen einen individuellen Plan, mit Unterricht bei Ihnen vor Ort oder online.", "k114": "Buchen Sie Ihre Probestunde", "k115": "Die erste Stunde und der Einstufungstest sind kostenlos. Wählen Sie Sprache und Uhrzeit – wir antworten innerhalb von 24 Stunden.", "k116": "Adresse", "k117": "Telefon", "k118": "Öffnungszeiten", "k119": "Montag bis Freitag, 9–21 Uhr · Samstag, 9–13 Uhr", "k120": "Name", "k121": "Sprache", "k122": "Aktuelles Niveau", "k123": "Weiß ich nicht, ich möchte den Test machen", "k124": "Anfänger (A1–A2)", "k125": "Mittelstufe (B1–B2)", "k126": "Fortgeschritten (C1–C2)", "k127": "Kurs", "k128": "Gruppenkurs", "k129": "Intensivkurs", "k130": "Bevorzugte Zeit", "k131": "Vormittag", "k132": "Nachmittag", "k133": "Abend", "k134": "Samstag", "k135": "Unterrichtsform", "k136": "Vor Ort", "k137": "Online", "k138": "Nachricht (optional)", "k139": "💬 Über WhatsApp buchen", "k140": "Ihre Daten werden nur zur Beantwortung Ihrer Anfrage verwendet.", "k141": "Sprachschule in Porto. Zwölf Sprachen, kleine Gruppen und muttersprachliche Lehrkräfte, für Erwachsene, Kinder und Unternehmen.", "k142": "Navigation", "k143": "Folgen Sie uns", "k144": "Alle Rechte vorbehalten"}, "uk": {"k0": "Школа мов", "k1": "Мови", "k2": "Курси", "k3": "Метод", "k4": "Ціни", "k5": "Контакти", "k6": "Безкоштовний пробний урок", "k7": "Школа мов · Порту", "k8": "Говоріть зі світом <em>упевнено.</em>", "k9": "Англійська, іспанська, французька, німецька та ще вісім мов — у невеликих групах і з викладачами-носіями мови. Для дорослих, дітей і компаній.", "k10": "Переглянути курси", "k11": "Років навчання", "k12": "Успішно складених офіційних іспитів", "k13": "Дванадцять мов — <em>в одному місці</em>", "k14": "Усі викладають носії мови — від першого знайомства з мовою до вільного володіння.", "k15": "Англійська", "k16": "Рівні A1–C2", "k17": "Іспанська", "k18": "Французька", "k19": "Німецька", "k20": "Італійська", "k21": "Португальська для іноземців", "k22": "Нідерландська", "k23": "Рівні A1–B2", "k24": "Російська", "k25": "Китайська", "k26": "Японська", "k27": "Корейська", "k28": "Арабська", "k29": "Курс для <em>будь-якої мети</em>", "k30": "Навчайтеся у власному темпі — у групі чи індивідуально, у школі чи вдома.", "k31": "Найпопулярніший", "k32": "Групові курси", "k33": "Групи від 4 до 8 учнів, двічі на тиждень, уранці, вдень або ввечері.", "k34": "Індивідуальні уроки", "k35": "Викладач лише для вас, гнучкий розклад і програма під ваші цілі.", "k36": "Діти та підлітки", "k37": "Жваві уроки з 4 років — з іграми, музикою та проєктами.", "k38": "Компанії", "k39": "Навчання для команд — у вашому офісі або онлайн, зі звітами про прогрес.", "k40": "Підготовка до іспитів", "k41": "Cambridge, IELTS, DELE, DELF і Goethe — з пробними іспитами та уважним супроводом.", "k42": "Онлайн-уроки", "k43": "Та сама якість, що й на очних заняттях, наживо та на власній платформі.", "k44": "Наш метод", "k45": "Говорити вчаться, <em>говорячи.</em>", "k46": "З першого уроку в центрі уваги — розмова. Граматика приходить природно і завжди пов'язана з реальними ситуаціями.", "k47": "Невеликі групи", "k48": "Не більше 8 учнів у групі, щоб кожен говорив на кожному уроці.", "k49": "Викладачі — носії мови", "k50": "Усі сертифіковані та мають досвід навчання іноземців.", "k51": "Онлайн-платформа", "k52": "Вправи, аудіо та записи уроків доступні цілодобово.", "k53": "Сертифікат за кожен рівень", "k54": "Після кожного рівня ви отримуєте сертифікат про відвідування та успішність.", "k55": "Пройти безкоштовний тест рівня", "k56": "Рівні", "k57": "Від першого «привіт» <em>до вільного володіння</em>", "k58": "Ми дотримуємося Загальноєвропейських рекомендацій з мовної освіти. Кожен рівень — від 60 до 90 годин занять.", "k59": "Початковий", "k60": "Вміє представитися і вживає повсякденні вирази.", "k61": "Елементарний", "k62": "Розповідає про сім'ю, роботу та покупки.", "k63": "Середній", "k64": "Справляється з ситуаціями в подорожі та розповідає про досвід.", "k65": "Вище середнього", "k66": "Вільно спілкується з носіями мови.", "k67": "Просунутий", "k68": "Ефективно використовує мову в роботі та навчанні.", "k69": "Досконалий", "k70": "Розуміє практично все і висловлюється точно.", "k71": "Зрозумілі ціни, <em>без сюрпризів</em>", "k72": "Безкоштовна реєстрація цього місяця, навчальні матеріали включено в усі курси.", "k73": "Група", "k74": "2 уроки по 90 хвилин на тиждень", "k75": "на місяць", "k76": "Групи до 8 учнів", "k77": "Навчальні матеріали включено", "k78": "Доступ до онлайн-платформи", "k79": "Сертифікат рівня", "k80": "Почати зараз", "k81": "Швидший результат", "k82": "Інтенсив", "k83": "4 уроки по 90 хвилин на тиждень", "k84": "Групи до 6 учнів", "k85": "Щотижневий розмовний клуб", "k86": "Рівень удвічі швидше", "k87": "Індивідуально", "k88": "Уроки по 60 хвилин під вас", "k89": "за урок", "k90": "Повністю гнучкий розклад", "k91": "Очно або онлайн", "k92": "Персональний план навчання", "k93": "Знижка на пакети з 10 уроків", "k94": "Знижки для братів і сестер, студентів і компаній. Щомісячна оплата без зобов'язань.", "k95": "Готуємо до офіційних іспитів", "k96": "Відгуки", "k97": "Учні, які вже <em>говорять зі світом</em>", "k98": "«За шість місяців я перейшла з A2 на B2 з англійської та отримала роботу, яку хотіла.»", "k99": "Англійська · Інтенсивний курс", "k100": "«Я приїхала до Португалії, не знаючи португальської. Тепер усе вирішую сама і знайшла багато друзів.»", "k101": "Португальська для іноземців · Група", "k102": "«Наші діти обожнюють уроки. Вони вчаться граючись і більше не соромляться говорити англійською.»", "k103": "Батьки · Діти та підлітки", "k104": "Часті запитання", "k105": "Маєте запитання?", "k106": "Як дізнатися свій рівень?", "k107": "Ми проводимо безкоштовний письмовий та усний тест рівня тривалістю близько 30 хвилин — у школі або онлайн.", "k108": "Чи можна почати посеред року?", "k109": "Так. Ми відкриваємо нові групи щомісяця, а індивідуальні уроки можна почати будь-коли.", "k110": "А якщо я пропущу урок?", "k111": "Його можна відпрацювати в іншій групі того ж рівня або переглянути запис на онлайн-платформі.", "k112": "Чи є курси для компаній?", "k113": "Так. Ми оцінюємо рівень команди і створюємо індивідуальну програму — із заняттями у вашому офісі або онлайн.", "k114": "Запишіться на пробний урок", "k115": "Перший урок і тест рівня — безкоштовні. Оберіть мову та час, і ми відповімо протягом 24 годин.", "k116": "Адреса", "k117": "Телефон", "k118": "Години роботи", "k119": "Понеділок–п'ятниця, 9:00–21:00 · Субота, 9:00–13:00", "k120": "Ім'я", "k121": "Мова", "k122": "Поточний рівень", "k123": "Не знаю, хочу пройти тест", "k124": "Початковий (A1–A2)", "k125": "Середній (B1–B2)", "k126": "Просунутий (C1–C2)", "k127": "Курс", "k128": "Груповий курс", "k129": "Інтенсивний курс", "k130": "Бажаний час", "k131": "Ранок", "k132": "День", "k133": "Вечір", "k134": "Субота", "k135": "Формат", "k136": "Очно", "k137": "Онлайн", "k138": "Повідомлення (необов'язково)", "k139": "💬 Записатися через WhatsApp", "k140": "Ваші дані використовуються лише для відповіді на ваш запит.", "k141": "Школа мов у Порту. Дванадцять мов, невеликі групи та викладачі-носії мови — для дорослих, дітей і компаній.", "k142": "Навігація", "k143": "Ми в соцмережах", "k144": "Усі права захищено"}, "ru": {"k0": "Языковая школа", "k1": "Языки", "k2": "Курсы", "k3": "Метод", "k4": "Цены", "k5": "Контакты", "k6": "Бесплатный пробный урок", "k7": "Языковая школа · Порту", "k8": "Говорите с миром <em>уверенно.</em>", "k9": "Английский, испанский, французский, немецкий и ещё восемь языков — в небольших группах и с преподавателями-носителями. Для взрослых, детей и компаний.", "k10": "Смотреть курсы", "k11": "Лет преподавания", "k12": "Успешно сданных официальных экзаменов", "k13": "Двенадцать языков — <em>в одном месте</em>", "k14": "Все преподают носители языка — от первого знакомства с языком до свободного владения.", "k15": "Английский", "k16": "Уровни A1–C2", "k17": "Испанский", "k18": "Французский", "k19": "Немецкий", "k20": "Итальянский", "k21": "Португальский для иностранцев", "k22": "Нидерландский", "k23": "Уровни A1–B2", "k24": "Русский", "k25": "Китайский", "k26": "Японский", "k27": "Корейский", "k28": "Арабский", "k29": "Курс для <em>любой цели</em>", "k30": "Учитесь в своём темпе — в группе или индивидуально, в школе или из дома.", "k31": "Самый популярный", "k32": "Групповые курсы", "k33": "Группы от 4 до 8 учеников, два раза в неделю, утром, днём или вечером.", "k34": "Индивидуальные уроки", "k35": "Преподаватель только для вас, гибкий график и программа под ваши цели.", "k36": "Дети и подростки", "k37": "Живые уроки с 4 лет — с играми, музыкой и проектами.", "k38": "Компании", "k39": "Обучение команд — в вашем офисе или онлайн, с отчётами о прогрессе.", "k40": "Подготовка к экзаменам", "k41": "Cambridge, IELTS, DELE, DELF и Goethe — с пробными экзаменами и внимательным сопровождением.", "k42": "Онлайн-уроки", "k43": "То же качество, что и на очных занятиях, в прямом эфире и на собственной платформе.", "k44": "Наш метод", "k45": "Говорить учатся, <em>говоря.</em>", "k46": "С первого урока в центре внимания — разговор. Грамматика приходит естественно и всегда связана с реальными ситуациями.", "k47": "Небольшие группы", "k48": "Не более 8 учеников в группе, чтобы каждый говорил на каждом уроке.", "k49": "Преподаватели-носители", "k50": "Все сертифицированы и имеют опыт обучения иностранцев.", "k51": "Онлайн-платформа", "k52": "Упражнения, аудио и записи уроков доступны круглосуточно.", "k53": "Сертификат за каждый уровень", "k54": "После каждого уровня вы получаете сертификат о посещении и успеваемости.", "k55": "Пройти бесплатный тест уровня", "k56": "Уровни", "k57": "От первого «привет» <em>до свободного владения</em>", "k58": "Мы следуем Общеевропейским компетенциям владения иностранным языком. Каждый уровень — от 60 до 90 часов занятий.", "k59": "Начальный", "k60": "Умеет представиться и использует повседневные выражения.", "k61": "Элементарный", "k62": "Рассказывает о семье, работе и покупках.", "k63": "Средний", "k64": "Справляется с ситуациями в поездке и рассказывает о своём опыте.", "k65": "Выше среднего", "k66": "Свободно общается с носителями языка.", "k67": "Продвинутый", "k68": "Эффективно использует язык в работе и учёбе.", "k69": "В совершенстве", "k70": "Понимает практически всё и выражает мысли точно.", "k71": "Понятные цены <em>без сюрпризов</em>", "k72": "Бесплатная запись в этом месяце, учебные материалы включены во все курсы.", "k73": "Группа", "k74": "2 урока по 90 минут в неделю", "k75": "в месяц", "k76": "Группы до 8 учеников", "k77": "Учебные материалы включены", "k78": "Доступ к онлайн-платформе", "k79": "Сертификат уровня", "k80": "Начать сейчас", "k81": "Быстрее результат", "k82": "Интенсив", "k83": "4 урока по 90 минут в неделю", "k84": "Группы до 6 учеников", "k85": "Еженедельный разговорный клуб", "k86": "Уровень вдвое быстрее", "k87": "Индивидуально", "k88": "Уроки по 60 минут под вас", "k89": "за урок", "k90": "Полностью гибкий график", "k91": "Очно или онлайн", "k92": "Персональный план обучения", "k93": "Скидка на пакеты из 10 уроков", "k94": "Скидки для братьев и сестёр, студентов и компаний. Ежемесячная оплата без обязательств.", "k95": "Готовим к официальным экзаменам", "k96": "Отзывы", "k97": "Ученики, которые уже <em>говорят с миром</em>", "k98": "«За шесть месяцев я перешла с A2 на B2 по английскому и получила работу, которую хотела.»", "k99": "Английский · Интенсивный курс", "k100": "«Я приехала в Португалию, не зная португальского. Теперь всё решаю сама и нашла много друзей.»", "k101": "Португальский для иностранцев · Группа", "k102": "«Наши дети обожают уроки. Они учатся играя и больше не стесняются говорить по-английски.»", "k103": "Родители · Дети и подростки", "k104": "Частые вопросы", "k105": "Есть вопросы?", "k106": "Как узнать свой уровень?", "k107": "Мы проводим бесплатный письменный и устный тест уровня примерно на 30 минут — в школе или онлайн.", "k108": "Можно начать в середине года?", "k109": "Да. Мы открываем новые группы каждый месяц, а индивидуальные уроки можно начать в любое время.", "k110": "А если я пропущу урок?", "k111": "Его можно отработать в другой группе того же уровня или посмотреть запись на онлайн-платформе.", "k112": "Есть ли курсы для компаний?", "k113": "Да. Мы оцениваем уровень команды и составляем индивидуальную программу — с занятиями в вашем офисе или онлайн.", "k114": "Запишитесь на пробный урок", "k115": "Первый урок и тест уровня — бесплатно. Выберите язык и время, и мы ответим в течение 24 часов.", "k116": "Адрес", "k117": "Телефон", "k118": "Часы работы", "k119": "Понедельник–пятница, 9:00–21:00 · Суббота, 9:00–13:00", "k120": "Имя", "k121": "Язык", "k122": "Текущий уровень", "k123": "Не знаю, хочу пройти тест", "k124": "Начальный (A1–A2)", "k125": "Средний (B1–B2)", "k126": "Продвинутый (C1–C2)", "k127": "Курс", "k128": "Групповой курс", "k129": "Интенсивный курс", "k130": "Удобное время", "k131": "Утро", "k132": "День", "k133": "Вечер", "k134": "Суббота", "k135": "Формат", "k136": "Очно", "k137": "Онлайн", "k138": "Сообщение (необязательно)", "k139": "💬 Записаться через WhatsApp", "k140": "Ваши данные используются только для ответа на ваш запрос.", "k141": "Языковая школа в Порту. Двенадцать языков, небольшие группы и преподаватели-носители — для взрослых, детей и компаний.", "k142": "Навигация", "k143": "Мы в соцсетях", "k144": "Все права защищены"}, "ja": {"k0": "語学スクール", "k1": "言語", "k2": "コース", "k3": "メソッド", "k4": "料金", "k5": "お問い合わせ", "k6": "無料体験レッスン", "k7": "語学スクール · ポルト", "k8": "世界と話そう、<em>自信を持って。</em>", "k9": "英語、スペイン語、フランス語、ドイツ語など12の言語を、少人数クラスとネイティブ講師で。大人、子ども、企業向けのコースがあります。", "k10": "コースを見る", "k11": "年の指導実績", "k12": "公式試験の合格率", "k13": "12の言語を、<em>ひとつの場所で</em>", "k14": "すべてネイティブ講師が担当。はじめての学習から流暢に話せるようになるまでサポートします。", "k15": "英語", "k16": "レベル A1〜C2", "k17": "スペイン語", "k18": "フランス語", "k19": "ドイツ語", "k20": "イタリア語", "k21": "外国人のためのポルトガル語", "k22": "オランダ語", "k23": "レベル A1〜B2", "k24": "ロシア語", "k25": "中国語", "k26": "日本語", "k27": "韓国語", "k28": "アラビア語", "k29": "<em>あらゆる目標</em>に合うコース", "k30": "グループでもマンツーマンでも、教室でも自宅からでも、自分のペースで学べます。", "k31": "いちばん人気", "k32": "グループレッスン", "k33": "4〜8名のクラスで週2回。朝・昼・夜から選べます。", "k34": "マンツーマンレッスン", "k35": "あなた専任の講師が、柔軟なスケジュールとオーダーメイドのプランで指導します。", "k36": "キッズ・ティーン", "k37": "4歳から。ゲーム、音楽、プロジェクトを取り入れた楽しいレッスン。", "k38": "法人向け", "k39": "御社またはオンラインでのチーム研修。進捗レポート付き。", "k40": "試験対策", "k41": "ケンブリッジ、IELTS、DELE、DELF、ゲーテ。模擬試験ときめ細かなサポート付き。", "k42": "オンラインレッスン", "k43": "対面レッスンと同じ質を、ライブで、自社プラットフォームで。", "k44": "私たちのメソッド", "k45": "話すことで、<em>話せるようになる。</em>", "k46": "最初のレッスンから会話が中心。文法は実際の場面と結びつけながら、自然に身につきます。", "k47": "少人数クラス", "k48": "1クラス最大8名。全員が毎回のレッスンで話します。", "k49": "ネイティブ講師", "k50": "全員が資格を持ち、外国人への指導経験が豊富です。", "k51": "オンラインプラットフォーム", "k52": "練習問題、音声、レッスンの録画を24時間いつでも利用できます。", "k53": "レベルごとに修了証", "k54": "各レベルの修了時に、出席と成績の証明書をお渡しします。", "k55": "無料レベルチェックを受ける", "k56": "レベル", "k57": "はじめての「こんにちは」から<em>流暢な会話まで</em>", "k58": "ヨーロッパ言語共通参照枠(CEFR)に準拠。各レベルは60〜90時間のレッスンで構成されています。", "k59": "入門", "k60": "自己紹介ができ、日常的な表現を使える。", "k61": "初級", "k62": "家族、仕事、買い物について話せる。", "k63": "中級", "k64": "旅行先の場面に対応し、経験を話せる。", "k65": "中上級", "k66": "ネイティブスピーカーと流暢に会話できる。", "k67": "上級", "k68": "仕事や学業で効果的に言語を使える。", "k69": "最上級", "k70": "ほぼすべてを理解し、正確に表現できる。", "k71": "わかりやすい料金、<em>追加費用なし</em>", "k72": "今月は入会金無料。すべてのコースに教材が含まれています。", "k73": "グループ", "k74": "90分レッスンを週2回", "k75": "月額", "k76": "最大8名のクラス", "k77": "教材込み", "k78": "オンラインプラットフォーム利用", "k79": "レベル修了証", "k80": "今すぐ始める", "k81": "最短で結果を", "k82": "集中コース", "k83": "90分レッスンを週4回", "k84": "最大6名のクラス", "k85": "毎週の会話クラブ", "k86": "半分の期間で1レベル", "k87": "マンツーマン", "k88": "あなたに合わせた60分レッスン", "k89": "1回あたり", "k90": "完全に自由なスケジュール", "k91": "対面またはオンライン", "k92": "個別の学習プラン", "k93": "10回パックで割引", "k94": "兄弟姉妹、学生、法人向けの割引あり。月払いで、契約期間の縛りはありません。", "k95": "公式試験の対策を行っています", "k96": "お客様の声", "k97": "もう<em>世界と話している</em>生徒たち", "k98": "「6か月で英語がA2からB2になり、希望していた仕事に就けました。」", "k99": "英語 · 集中コース", "k100": "「ポルトガル語を話せないままポルトガルに来ました。今では何でも自分ででき、友達もたくさんできました。」", "k101": "外国人のためのポルトガル語 · グループ", "k102": "「子どもたちはレッスンが大好きです。遊びながら学び、英語を話すことを恥ずかしがらなくなりました。」", "k103": "保護者 · キッズ・ティーン", "k104": "よくあるご質問", "k105": "ご質問はありますか?", "k106": "自分のレベルはどうやってわかりますか?", "k107": "約30分の無料レベルチェック(筆記と口頭)を行います。教室でもオンラインでも受けられます。", "k108": "年度の途中から始められますか?", "k109": "はい。毎月新しいクラスを開講しており、マンツーマンレッスンはいつでも始められます。", "k110": "レッスンを欠席した場合は?", "k111": "同じレベルの別クラスで振替受講するか、オンラインプラットフォームで録画を見ることができます。", "k112": "法人向けのコースはありますか?", "k113": "はい。チームのレベルを診断し、御社またはオンラインでのレッスンを含むオーダーメイドのプランを作成します。", "k114": "体験レッスンを予約する", "k115": "最初のレッスンとレベルチェックは無料です。言語と時間帯を選べば、24時間以内にご連絡します。", "k116": "住所", "k117": "電話", "k118": "営業時間", "k119": "月〜金 9:00〜21:00 · 土 9:00〜13:00", "k120": "お名前", "k121": "言語", "k122": "現在のレベル", "k123": "わからないのでテストを受けたい", "k124": "初級(A1〜A2)", "k125": "中級(B1〜B2)", "k126": "上級(C1〜C2)", "k127": "コース", "k128": "グループコース", "k129": "集中コース(グループ)", "k130": "希望の時間帯", "k131": "午前", "k132": "午後", "k133": "", "k134": "土曜日", "k135": "受講形式", "k136": "対面", "k137": "オンライン", "k138": "メッセージ(任意)", "k139": "💬 WhatsAppで予約", "k140": "お客様の情報はお問い合わせへの返信にのみ使用します。", "k141": "ポルトの語学スクール。12の言語、少人数クラス、ネイティブ講師。大人、子ども、企業向け。", "k142": "メニュー", "k143": "フォローする", "k144": "無断転載禁止"}, "zh": {"k0": "语言学校", "k1": "语言", "k2": "课程", "k3": "教学方法", "k4": "价格", "k5": "联系我们", "k6": "免费试听课", "k7": "语言学校 · 波尔图", "k8": "自信地<em>与世界对话。</em>", "k9": "英语、西班牙语、法语、德语等十二种语言,小班教学,母语教师授课。面向成人、儿童和企业。", "k10": "查看课程", "k11": "年教学经验", "k12": "官方考试通过率", "k13": "十二种语言,<em>一站学习</em>", "k14": "全部由母语教师授课,从零基础到流利表达。", "k15": "英语", "k16": "A1 至 C2 级", "k17": "西班牙语", "k18": "法语", "k19": "德语", "k20": "意大利语", "k21": "外国人葡萄牙语", "k22": "荷兰语", "k23": "A1 至 B2 级", "k24": "俄语", "k25": "中文", "k26": "日语", "k27": "韩语", "k28": "阿拉伯语", "k29": "满足<em>每一个目标</em>的课程", "k30": "按自己的节奏学习:小组或一对一,在校或在家都可以。", "k31": "最受欢迎", "k32": "小组课程", "k33": "每班4至8名学员,每周两次,可选上午、下午或晚上。", "k34": "一对一课程", "k35": "专属老师,时间灵活,量身定制学习计划。", "k36": "少儿与青少年", "k37": "4岁起,通过游戏、音乐和项目进行生动教学。", "k38": "企业培训", "k39": "在贵公司或线上为团队授课,并提供学习进度报告。", "k40": "考试备考", "k41": "剑桥、雅思、DELE、DELF和歌德考试,配有模拟考试和贴心辅导。", "k42": "线上课程", "k43": "与线下课程同等质量,实时直播,使用自有平台。", "k44": "我们的教学方法", "k45": "在说中<em>学会说。</em>", "k46": "从第一节课起就以对话为核心。语法在真实情境中自然掌握。", "k47": "小班教学", "k48": "每班最多8名学员,确保每个人每节课都能开口。", "k49": "母语教师", "k50": "全部持有资质,具有丰富的对外教学经验。", "k51": "在线平台", "k52": "练习、音频和课程录像全天候开放。", "k53": "每个级别颁发证书", "k54": "每完成一个级别,即可获得出勤与成绩证书。", "k55": "免费参加水平测试", "k56": "级别", "k57": "从第一声\"你好\"<em>到流利表达</em>", "k58": "我们遵循《欧洲语言共同参考框架》。每个级别包含60至90小时课程。", "k59": "入门", "k60": "能自我介绍,使用日常用语。", "k61": "初级", "k62": "能谈论家庭、工作和购物。", "k63": "中级", "k64": "能应对旅行场景并讲述经历。", "k65": "中高级", "k66": "能与母语者流利交谈。", "k67": "高级", "k68": "能在工作和学习中有效使用语言。", "k69": "精通", "k70": "几乎能理解一切,并准确表达。", "k71": "价格透明,<em>没有意外</em>", "k72": "本月免报名费,所有课程均含教材。", "k73": "小组", "k74": "每周2节,每节90分钟", "k75": "每月", "k76": "每班最多8人", "k77": "含教材", "k78": "使用在线平台", "k79": "级别证书", "k80": "立即开始", "k81": "更快见效", "k82": "强化", "k83": "每周4节,每节90分钟", "k84": "每班最多6人", "k85": "每周会话俱乐部", "k86": "一半时间完成一个级别", "k87": "一对一", "k88": "为您定制的60分钟课程", "k89": "每节", "k90": "时间完全灵活", "k91": "线下或线上", "k92": "个性化学习计划", "k93": "10节课套餐优惠", "k94": "兄弟姐妹、学生和企业享有折扣。按月付费,无需长期合约。", "k95": "我们提供官方考试备考", "k96": "学员评价", "k97": "已经在<em>与世界对话</em>的学员", "k98": "\"六个月里,我的英语从A2提升到B2,并得到了理想的工作。\"", "k99": "英语 · 强化课程", "k100": "\"我来葡萄牙时完全不会说葡萄牙语。现在一切都能自己处理,还交了很多朋友。\"", "k101": "外国人葡萄牙语 · 小组", "k102": "\"孩子们很喜欢上课。他们在玩中学,说英语不再害羞了。\"", "k103": "家长 · 少儿与青少年", "k104": "常见问题", "k105": "有疑问吗?", "k106": "如何知道自己的水平?", "k107": "我们提供约30分钟的免费笔试和口试水平测试,可在校或线上进行。", "k108": "可以在年中开始学习吗?", "k109": "可以。我们每月开设新班,一对一课程随时可以开始。", "k110": "如果缺了一节课怎么办?", "k111": "可以在同级别的其他班补课,或在在线平台观看录像。", "k112": "有企业课程吗?", "k113": "有。我们评估团队水平并量身定制计划,可在贵公司或线上授课。", "k114": "预约试听课", "k115": "第一节课和水平测试均免费。选择语言和时间,我们会在24小时内回复。", "k116": "地址", "k117": "电话", "k118": "营业时间", "k119": "周一至周五 9:00–21:00 · 周六 9:00–13:00", "k120": "姓名", "k121": "语言", "k122": "当前水平", "k123": "不清楚,想参加测试", "k124": "初级(A1–A2)", "k125": "中级(B1–B2)", "k126": "高级(C1–C2)", "k127": "课程", "k128": "小组课程", "k129": "强化课程", "k130": "偏好时间", "k131": "上午", "k132": "下午", "k133": "晚上", "k134": "周六", "k135": "上课方式", "k136": "线下", "k137": "线上", "k138": "留言(可选)", "k139": "💬 通过WhatsApp预约", "k140": "您的信息仅用于回复您的咨询。", "k141": "位于波尔图的语言学校。十二种语言、小班教学、母语教师,面向成人、儿童和企业。", "k142": "导航", "k143": "关注我们", "k144": "版权所有"}};
+  const LANG_FLAGS = {"pt": "https://flagcdn.com/w40/pt.png", "en": "https://flagcdn.com/w40/gb.png", "es": "https://flagcdn.com/w40/es.png", "fr": "https://flagcdn.com/w40/fr.png", "it": "https://flagcdn.com/w40/it.png", "de": "https://flagcdn.com/w40/de.png", "uk": "https://flagcdn.com/w40/ua.png", "ru": "https://flagcdn.com/w40/ru.png", "ja": "https://flagcdn.com/w40/jp.png", "zh": "https://flagcdn.com/w40/cn.png"};
+  const ptText = {};
+  document.querySelectorAll('[data-i18n]').forEach(el => { ptText[el.dataset.i18n] = el.innerHTML; });
+  const langBox = document.getElementById('lang');
+  function setLang(lang) {
+    if (lang !== 'pt' && !I18N[lang]) lang = 'pt';
+    const dict = I18N[lang] || {};
+    document.querySelectorAll('[data-i18n]').forEach(el => { const k = el.dataset.i18n; el.innerHTML = dict[k] ?? ptText[k]; });
+    document.documentElement.lang = lang === 'pt' ? 'pt-PT' : lang;
+    document.getElementById('langFlag').src = LANG_FLAGS[lang];
+    document.getElementById('langCode').textContent = lang.toUpperCase();
+    document.querySelectorAll('#langMenu button').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+  }
+  document.getElementById('langBtn').addEventListener('click', e => {
+    e.stopPropagation();
+    const open = langBox.classList.toggle('open');
+    e.currentTarget.setAttribute('aria-expanded', open);
+  });
+  document.querySelectorAll('#langMenu button').forEach(b => b.addEventListener('click', () => { setLang(b.dataset.lang); langBox.classList.remove('open'); }));
+  document.addEventListener('click', () => langBox.classList.remove('open'));
+  let saved = null;
+  try { saved = localStorage.getItem('lang'); } catch (e) {}
+  setLang(saved || (navigator.language || 'pt').slice(0, 2));
+</script>
+</body>
+</html>
